@@ -12,6 +12,8 @@ const closeSearchBar = document.getElementById("close-search")
 const clearSearchBar = document.getElementById("mobile-clear")
 const mobileSearchBar = document.getElementById("mobile-search")
 const mobileSearchInput = document.getElementById("mobile-search-input")
+const thumbs = document.querySelectorAll(".thumbs")
+const playPauseIcon = document.getElementById("play-icon")
 
 // setting the height of the topbar and topcontent divs
 // topBar.style.height = topContent.offsetHeight + 'px';
@@ -80,7 +82,53 @@ navItems.forEach(navItem => {   //change this to a function
     })
 })
 
+// Toggling the active class on the thumbs
+thumbs.forEach(thumb => {   //change this to a function
+    thumb.addEventListener('click', function() {
+      // Remove active class from all items
+        thumbs.forEach(i => i.classList.remove('active'));
+
+      // Add active class to the clicked item
+        this.classList.add('active');
+    })
+})
+
+// Toggling the pause and play icons
+playPauseIcon.addEventListener('click', function() {
+    if (playPauseIcon.textContent === 'play_arrow') {
+        playPauseIcon.textContent = 'pause';
+    } else {
+        playPauseIcon.textContent = 'play_arrow';
+    }
+
+})
+
 navMenu.addEventListener("click", () => DisplayDiv(mobileSideNav))
+
+// AUDIO PLAYING
+const musicDivs = document.querySelectorAll(".music");
+
+musicDivs.forEach(musicDiv => {
+    // const playButton = musicDiv.querySelector(".play-icon");
+    const audio = document.querySelector(".audio-player");
+    const isPlaying = false;
+
+    console.log("Play button found:", playPauseIcon);
+    console.log("Audio element found:", audio);
+
+    playPauseIcon.addEventListener("click", function() {
+        if (!isPlaying) {
+            audio.play();
+            playPauseIcon.textContent = "pause"; // Change icon to pause when playing
+        } else {
+            audio.pause();
+            audio.currentTime = 0; // Reset audio to start
+            playPauseIcon.textContent = "play_arrow"; // Change icon back to play when paused
+        }
+        isPlaying = !isPlaying;
+    });
+})
+
 // closeBtn.addEventListener("click", () => DisplayDiv(hiddenNav)) 
 
 // navMenu.addEventListener("click", () => {

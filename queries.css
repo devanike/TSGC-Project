@@ -206,7 +206,6 @@
     .container .navbar.hide {
         display: block;
     }
-
 }
 
 /* TABLET */
@@ -222,17 +221,17 @@
 
     .container .topbar .top-content {
         max-width: 100vw;
-        grid-template-columns: 20% auto 20%;
+        grid-template-columns: 15% auto 20%;
         margin-right: 10px;
     }
 
     .container .topbar .top-content .left-content img {
-        width: 50%;
+        width: 55%;
         margin-left: 10px;
     }
 
     .container .topbar .top-content .center-content {
-        margin-left: 40px;
+        margin-left: 10px;
     }
 
     .container .topbar .top-content .center-content .search {

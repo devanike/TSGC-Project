@@ -11,7 +11,7 @@
     <title>Home</title>
 </head>
 <body>
-    <main class="container">
+    <div class="container">
         <header class="topbar" id="topbar">
             <div class="top-content grid" id="top-content">
                 <div class="left-content flex">
@@ -156,7 +156,82 @@
             </ul>
         </nav>
 
-    </main>
+        <!-- Main Content -->
+        <main class="main-content">
+            <article class="category">
+                <ul class="flex">
+                    <li>
+                        <a href="#">Energize</a>
+                    </li>
+                    <li>
+                        <a href="#">Workout</a>
+                    </li>
+                    <li>
+                        <a href="#">Relax</a>
+                    </li>
+                    <li>
+                        <a href="#">Feel good</a>
+                    </li>
+                    <li>
+                        <a href="#">Commute</a>
+                    </li>
+                    <li>
+                        <a href="#">Sleep</a>
+                    </li>
+                    <li>
+                        <a href="#">Focus</a>
+                    </li>
+                </ul>
+            </article>
+            <!-- MAIN CONTENT HEADING -->
+            <header class="">
+                <h1>Welcome <span>Grace</span></h1>
+                <div class="latest flex">
+                    <div class="heading flex">
+                        <h2>Latest Messages</h2>
+                        <a href="#" class="button">Play all</a>
+                    </div>
+                    <div class="arrows flex">
+                        <span class="material-symbols-outlined">keyboard_arrow_left</span>
+                        <span class="material-symbols-outlined">keyboard_arrow_right</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- CONTENT -->
+            <div class="content flex">
+                <div class="music flex">
+                    <div class="image">
+                        <img src="AEO.png" alt="Gratitude by Anendlessocean">
+                        <div class="image-overlay">
+                            <span class="material-symbols-outlined" id="play-icon">play_arrow</span>
+                        </div>
+                    </div>
+                    <div class="music-info">
+                        <h2><a href="#">Gratitude</a></h2>
+                        <div class="info">
+                            <a href="#">Anendlessocean</a>
+                            <span class="material-symbols-outlined">circle</span>
+                            <a href="#">Gratitude</a>
+                        </div>
+                        <p>3:23</p>
+                    </div>
+                    <div class="overlay-icons">
+                        <span class="material-symbols-outlined thumbs">thumb_up</span>
+                        <span class="material-symbols-outlined thumbs">thumb_down</span>
+                        <!-- <span class="material-symbols-outlined">more_vert</span> -->
+                    </div>
+                    <audio class="audio-player">
+                        <source src="Anendlessocean - Gratitude.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+
+        </main>
+
+    </div>
 
     <script src="script.js" type="module"></script> 
 </body>
