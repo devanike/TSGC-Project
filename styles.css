@@ -530,7 +530,7 @@ input#progress-bar {
     padding: 10px;
 }
 
-.audio-controls-bar .controls .control-left .duration-count {
+.audio-controls-bar .controls .control-left span {
     font-size: 15px;
 }
 
@@ -543,3 +543,8 @@ span#play-pause-button {
     cursor: pointer;
 }
 
+.controls #shuffle-button.active {
+    background-color: var(--grey);
+    border-radius: 50%;
+    padding: 3px;
+}

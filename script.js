@@ -97,144 +97,238 @@ thumbs.forEach(thumb => {   //change this to a function
 
 navMenu.addEventListener("click", () => DisplayDiv(mobileSideNav))
 
-// function formatDuration(seconds) {
-//     const minutes = Math.floor(seconds / 60);
-//     const secs = Math.floor(seconds % 60);
-//     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-// }
 
-
+// AUDIO PLAY BAR
 const musicDivs = document.querySelectorAll('.music');
-const playAudioBar = document.getElementById('play-pause-button')
+const playAudioBar = document.getElementById('play-pause-button');
+const forwardButton = document.getElementById('forward-button');
+const backwardButton = document.getElementById('backward-button');
+const shuffleButton = document.getElementById('shuffle-button');
+const durationBar = document.querySelector('#audio-controls-bar .duration');
+const progressBar = document.getElementById('progress-bar');
+const durationCount = document.getElementById('duration-count');
 let currentAudio = null;
+let currentPlayIcon = null;
+let currentIndex = -1;
+let progressUpdateInterval = null
+let isShuffled = false;
+let shuffledList = [];
+let originalList = [];
 
-musicDivs.forEach(musicDiv => {
+
+// Initialize the original list of music
+originalList = Array.from(musicDivs).map((musicDiv, index) => {
+    const audioPlayer = musicDiv.querySelector('.audio-player');
+    const playIcon = musicDiv.querySelector('#play-icon');
+    audioPlayer.addEventListener('ended', () => playNext());
+    audioPlayer.addEventListener('loadedmetadata', () => {
+        const durationElement = musicDiv.querySelector('.duration');
+        const formattedDuration = formatTime(audioPlayer.duration);
+        durationElement.textContent = formattedDuration;
+        if (audioPlayer === currentAudio) {
+            durationBar.textContent = formattedDuration;
+        }
+    });
+    return { audioPlayer, playIcon, index };
+});
+
+
+ // Function to shuffle the playlist
+function shufflePlaylist() {
+    shuffledList = [...originalList];
+    for (let i = shuffledList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledList[i], shuffledList[j]] = [shuffledList[j], shuffledList[i]];
+    }
+}
+
+musicDivs.forEach((musicDiv, index)  => {
     const playIcon = musicDiv.querySelector('#play-icon');
     const audioPlayer = musicDiv.querySelector('.audio-player');
 
     playIcon.addEventListener('click', () => {
-        const isPlaying = playIcon.textContent === 'pause';
+        handlePlayPause(audioPlayer, playIcon, index);
+    });
 
-        // Pause the current audio if it's playing
-        if (currentAudio && isPlaying) {
-            currentAudio.pause();
-            // currentAudio.previousElementSibling.textContent = 'play_arrow';
-            // playAudioBar.textContent = 'pause'
-        }
+    // Sync the play/pause state with the audio player controls
+    audioPlayer.addEventListener('play', () => {
+        playIcon.textContent = 'pause';
+        startProgressUpdateInterval(audioPlayer);
+    });
 
-        if (isPlaying) {
-            // Change the icon to play and pause the audio
-            playIcon.textContent = 'play_arrow';
-            playAudioBar.textContent = 'play_arrow'
-            audioPlayer.pause();
-            currentAudio = null;
-        } else {
-            // Change the icon to pause and play the audio
-            playIcon.textContent = 'pause';
-            playAudioBar.textContent = 'pause'
-            audioPlayer.play();
-            currentAudio = audioPlayer;
-        }
+    audioPlayer.addEventListener('pause', () => {
+        playIcon.textContent = 'play_arrow';
+        clearInterval(progressUpdateInterval);
+    });
+
+    audioPlayer.addEventListener('ended', () => {
+        playIcon.textContent = 'play_arrow';
+        clearInterval(progressUpdateInterval);
+        playNext(); // Automatically play the next song
+    });
+
+    audioPlayer.addEventListener('timeupdate', () => {
+        updateProgressBar(audioPlayer);
     });
 });
 
+playAudioBar.addEventListener('click', () => {
+    if (currentAudio) {
+        if (currentAudio.paused) {
+            currentAudio.play();
+            playAudioBar.textContent = 'pause';
+            if (currentPlayIcon) currentPlayIcon.textContent = 'pause';
+            startProgressUpdateInterval(currentAudio);
+        } else {
+            currentAudio.pause();
+            playAudioBar.textContent = 'play_arrow';
+            if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
+            clearInterval(progressUpdateInterval);
+        }
+    }
+});
 
-// // Function to update duration in p tag
-// function updateDuration(audioElement) {
-//     const durationElement = audioElement.closest('.music').querySelector('.duration');
-//     audioElement.addEventListener('loadedmetadata', () => {
-//         const duration = formatDuration(audioElement.duration);
-//         durationElement.textContent = duration;
-//     });
-// }
+forwardButton.addEventListener('click', () => {
+    playNext();
+});
 
-// // Initialize duration for each audio element
-// document.querySelectorAll('.audio-player').forEach(audio => {
-//     updateDuration(audio);
-// });
+backwardButton.addEventListener('click', () => {
+    playPrevious();
+});
 
-// const bottomAudio = document.getElementById('bottom-audio');
-// const audioControlsBar = document.getElementById('audio-controls-bar');
+progressBar.addEventListener('input', () => {
+    if (currentAudio) {
+        currentAudio.currentTime = (progressBar.value / 100) * currentAudio.duration;
+    }
+});
 
-// let currentAudio = null;
-// let currentIcon = null;
+function handlePlayPause(audioPlayer, playIcon, index) {
+    // Pause te current audio if it's playing
+    if (currentAudio && currentAudio !== audioPlayer) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0; // Restart the previously playing song
+        if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
+        playAudioBar.textContent = 'play_arrow';
+    }
 
-// playIcons.forEach(icon => {
-//     icon.addEventListener('click', () => {
-//         const musicDiv = icon.closest('.music');
-//         const audio = musicDiv.querySelector('.audio-player');
-//         const audioSrc = audio.querySelector('source').src;
-        
-//         // Check if the clicked audio is already playing
-//         if (bottomAudio.src !== audioSrc) {
-//             // Update the bottom audio source and play
-//             bottomAudio.src = audioSrc;
-//             bottomAudio.play();
-            
-//             // Update the icon of the previously playing audio, if any
-//             if (currentIcon) {
-//                 currentIcon.textContent = 'play_arrow';
-//             }
-            
-//             // Set the new icon as the current icon
-//             currentIcon = icon;
-//             icon.textContent = 'pause';
-//             // audioControlsBar.style.display = 'flex'; 
-//         } else {
-//             // Toggle play/pause based on audio state
-//             if (bottomAudio.paused) {
-//                 bottomAudio.play();
-//                 icon.textContent = 'pause';
-//                 // audioControlsBar.style.display = 'flex'; 
-//             } else {
-//                 bottomAudio.pause();
-//                 icon.textContent = 'play_arrow';
-//                 // audioControlsBar.style.display = 'none'; 
-//             }
-//         }
-//     });
-// });
+     // Toggle the play/pause state
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playIcon.textContent = 'pause';
+        playAudioBar.textContent = 'pause';
+        currentAudio = audioPlayer;
+        currentPlayIcon = playIcon;
+        currentIndex = index;
+        durationBar.textContent = formatTime(audioPlayer.duration);
+        updateProgressBar(audioPlayer);
+        updateDurationCount(audioPlayer);
+    } else {
+        audioPlayer.pause();
+        playIcon.textContent = 'play_arrow';
+        playAudioBar.textContent = 'play_arrow';
+        currentAudio = null;
+        currentPlayIcon = null;
+        currentIndex = -1
+        clearInterval(progressUpdateInterval);
+    }
+}
 
-// // Listen for the pause event on the bottom audio controls
-// bottomAudio.addEventListener('pause', () => {
-//     if (currentIcon) {
-//         currentIcon.textContent = 'play_arrow';
-//     }
-//     // audioControlsBar.style.display = 'none'; 
-// });
+function playNext() {
+    const list = isShuffled ? shuffledList : originalList;
+    if (currentIndex < list.length - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // loop to the first audio
+    }
+    playAudioAtCurrentIndex(list);
+}
 
-// // Listen for the play event on the bottom audio controls to ensure sync
-// bottomAudio.addEventListener('play', () => {
-//     if (currentIcon) {
-//         currentIcon.textContent = 'pause';
-//     }
-// });
+function playPrevious() {
+    const list = isShuffled ? shuffledList : originalList;
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = list.length - 1; // loop to the last audio
+    }
+    playAudioAtCurrentIndex(list);
+}
+
+function playAudioAtCurrentIndex(list) {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0; // Restart the previously playing song
+        if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
+    }
+
+    // const { audioPlayer, playIcon } = audioList[currentIndex];
+    const { audioPlayer, playIcon } = list[currentIndex];
+    audioPlayer.play();
+    playIcon.textContent = 'pause';
+    playAudioBar.textContent = 'pause';
+    durationBar.textContent = formatTime(audioPlayer.duration);
+    currentAudio = audioPlayer;
+    currentPlayIcon = playIcon;
+    updateProgressBar(audioPlayer);
+    updateDurationCount(audioPlayer);
+}
+
+function startProgressUpdateInterval(audioPlayer) {
+    progressUpdateInterval = setInterval(() => {
+        updateDurationCount(audioPlayer);
+    }, 1000); // Update every second
+}
+
+function updateProgressBar(audioPlayer) {
+    const progressPercent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+    progressBar.value = progressPercent;
+}
+
+function updateDurationCount(audioPlayer) {
+    durationCount.innerHTML = `${formatTime(audioPlayer.currentTime)}/<span class="duration">${formatTime(audioPlayer.duration)}</span>`;
+}
+
+shuffleButton.addEventListener('click', () => {
+    isShuffled = !isShuffled;
+    if (isShuffled) {
+        shufflePlaylist();
+        shuffleButton.classList.add('active'); // Add class to indicate shuffle is active
+         // Continue playing the current song or start playing from the shuffled list
+        // if (currentAudio) {
+        //     playAudioAtCurrentIndex(shuffledList);
+        // }
+        if (currentAudio) {
+            // Set currentIndex to the shuffled position of the current audio
+            currentIndex = shuffledList.findIndex(item => item.audioPlayer === currentAudio);
+            if (currentIndex === -1) {
+                currentIndex = 0; // Default to the first song in shuffledList if not found
+            }
+        }
+    } else {
+        shuffledList = [];
+        shuffleButton.classList.remove('active'); // Remove class to indicate shuffle is inactive
+        // Reset to the original list if shuffle is turned off
+        // if (currentAudio) {
+        //     currentIndex = originalList.findIndex(item => item.audioPlayer === currentAudio);
+        //     playAudioAtCurrentIndex(originalList);
+        // }
+        if (currentAudio) {
+            // Set currentIndex to the original position of the current audio
+            currentIndex = originalList.findIndex(item => item.audioPlayer === currentAudio);
+            if (currentIndex === -1) {
+                currentIndex = 0; // Default to the first song in originalList if not found
+            }
+        }
+    }
+    playAudioAtCurrentIndex(isShuffled ? shuffledList : originalList);
+    // if (currentAudio) {
+    //     playNext(); // Restart with the shuffled list
+    // }
+});
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+}
 
 
-// closeBtn.addEventListener("click", () => DisplayDiv(hiddenNav)) 
-
-// navMenu.addEventListener("click", () => {
-//     centerContent.classList.add("expanded")
-// })
-
-// closeBtn.addEventListener("click", () => {
-//     centerContent.classList.remove("expanded")
-// })
-
-// this.classList.add('active');
-
-// navMenu.addEventListener("click", () => {
-//     // adding the left margin
-//     centerContent.style.marginLeft = '30px';
-// })
-
-// // Changing the TopBar and NavBar's color after scrolling
-// window.onscroll = () => {
-//     if (window.scrollY > 0) {
-//         topBar.classList.add('scroll-active');
-//         sideNav.classList.add('scroll-active');
-//     } else {
-//         topBar.classList.remove('scroll-active');
-//         sideNav.classList.remove('scroll-active');
-//     }
-// };
