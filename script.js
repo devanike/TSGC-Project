@@ -13,7 +13,9 @@ const clearSearchBar = document.getElementById("mobile-clear")
 const mobileSearchBar = document.getElementById("mobile-search")
 const mobileSearchInput = document.getElementById("mobile-search-input")
 const thumbs = document.querySelectorAll(".thumbs")
-const playPauseIcon = document.getElementById("play-icon")
+// const playPauseIcon = document.getElementById("play-icon")
+const playIcons = document.querySelectorAll('.image-overlay > span');
+
 
 // setting the height of the topbar and topcontent divs
 // topBar.style.height = topContent.offsetHeight + 'px';
@@ -93,41 +95,121 @@ thumbs.forEach(thumb => {   //change this to a function
     })
 })
 
-// Toggling the pause and play icons
-playPauseIcon.addEventListener('click', function() {
-    if (playPauseIcon.textContent === 'play_arrow') {
-        playPauseIcon.textContent = 'pause';
-    } else {
-        playPauseIcon.textContent = 'play_arrow';
-    }
-
-})
-
 navMenu.addEventListener("click", () => DisplayDiv(mobileSideNav))
 
-// AUDIO PLAYING
-const musicDivs = document.querySelectorAll(".music");
+// function formatDuration(seconds) {
+//     const minutes = Math.floor(seconds / 60);
+//     const secs = Math.floor(seconds % 60);
+//     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+// }
+
+
+const musicDivs = document.querySelectorAll('.music');
+const playAudioBar = document.getElementById('play-pause-button')
+let currentAudio = null;
 
 musicDivs.forEach(musicDiv => {
-    // const playButton = musicDiv.querySelector(".play-icon");
-    const audio = document.querySelector(".audio-player");
-    const isPlaying = false;
+    const playIcon = musicDiv.querySelector('#play-icon');
+    const audioPlayer = musicDiv.querySelector('.audio-player');
 
-    console.log("Play button found:", playPauseIcon);
-    console.log("Audio element found:", audio);
+    playIcon.addEventListener('click', () => {
+        const isPlaying = playIcon.textContent === 'pause';
 
-    playPauseIcon.addEventListener("click", function() {
-        if (!isPlaying) {
-            audio.play();
-            playPauseIcon.textContent = "pause"; // Change icon to pause when playing
-        } else {
-            audio.pause();
-            audio.currentTime = 0; // Reset audio to start
-            playPauseIcon.textContent = "play_arrow"; // Change icon back to play when paused
+        // Pause the current audio if it's playing
+        if (currentAudio && isPlaying) {
+            currentAudio.pause();
+            // currentAudio.previousElementSibling.textContent = 'play_arrow';
+            // playAudioBar.textContent = 'pause'
         }
-        isPlaying = !isPlaying;
+
+        if (isPlaying) {
+            // Change the icon to play and pause the audio
+            playIcon.textContent = 'play_arrow';
+            playAudioBar.textContent = 'play_arrow'
+            audioPlayer.pause();
+            currentAudio = null;
+        } else {
+            // Change the icon to pause and play the audio
+            playIcon.textContent = 'pause';
+            playAudioBar.textContent = 'pause'
+            audioPlayer.play();
+            currentAudio = audioPlayer;
+        }
     });
-})
+});
+
+
+// // Function to update duration in p tag
+// function updateDuration(audioElement) {
+//     const durationElement = audioElement.closest('.music').querySelector('.duration');
+//     audioElement.addEventListener('loadedmetadata', () => {
+//         const duration = formatDuration(audioElement.duration);
+//         durationElement.textContent = duration;
+//     });
+// }
+
+// // Initialize duration for each audio element
+// document.querySelectorAll('.audio-player').forEach(audio => {
+//     updateDuration(audio);
+// });
+
+// const bottomAudio = document.getElementById('bottom-audio');
+// const audioControlsBar = document.getElementById('audio-controls-bar');
+
+// let currentAudio = null;
+// let currentIcon = null;
+
+// playIcons.forEach(icon => {
+//     icon.addEventListener('click', () => {
+//         const musicDiv = icon.closest('.music');
+//         const audio = musicDiv.querySelector('.audio-player');
+//         const audioSrc = audio.querySelector('source').src;
+        
+//         // Check if the clicked audio is already playing
+//         if (bottomAudio.src !== audioSrc) {
+//             // Update the bottom audio source and play
+//             bottomAudio.src = audioSrc;
+//             bottomAudio.play();
+            
+//             // Update the icon of the previously playing audio, if any
+//             if (currentIcon) {
+//                 currentIcon.textContent = 'play_arrow';
+//             }
+            
+//             // Set the new icon as the current icon
+//             currentIcon = icon;
+//             icon.textContent = 'pause';
+//             // audioControlsBar.style.display = 'flex'; 
+//         } else {
+//             // Toggle play/pause based on audio state
+//             if (bottomAudio.paused) {
+//                 bottomAudio.play();
+//                 icon.textContent = 'pause';
+//                 // audioControlsBar.style.display = 'flex'; 
+//             } else {
+//                 bottomAudio.pause();
+//                 icon.textContent = 'play_arrow';
+//                 // audioControlsBar.style.display = 'none'; 
+//             }
+//         }
+//     });
+// });
+
+// // Listen for the pause event on the bottom audio controls
+// bottomAudio.addEventListener('pause', () => {
+//     if (currentIcon) {
+//         currentIcon.textContent = 'play_arrow';
+//     }
+//     // audioControlsBar.style.display = 'none'; 
+// });
+
+// // Listen for the play event on the bottom audio controls to ensure sync
+// bottomAudio.addEventListener('play', () => {
+//     if (currentIcon) {
+//         currentIcon.textContent = 'pause';
+//     }
+// });
+
 
 // closeBtn.addEventListener("click", () => DisplayDiv(hiddenNav)) 
 

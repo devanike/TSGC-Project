@@ -325,6 +325,7 @@ a {
     margin: auto;
     padding-top: 110px;
     margin-left: 250px;
+    overflow: hidden;
 } 
 
 .container .main-content .category ul {
@@ -383,6 +384,7 @@ a {
     border-radius: 50%;
     border: 2px solid var(--grey);
     padding: 5px;
+    cursor: pointer;
 }
 
 .arrows span:hover {
@@ -393,21 +395,29 @@ a {
     position: relative;
     margin-top: 10px;
     gap: 20px;
-    /* height: auto; */
+    white-space: nowrap;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(6, 450px);
+    /* background-color: aqua; */
+    max-height: 245px;
+    padding: 5px 0;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
-.container .main-content .content:hover .overlay-icons {
-    opacity: 1;
+.container .main-content .content:hover {
+    overflow-x: auto;
 }
-
 
 .container .main-content .content .music {
     position: relative;
-    /* overflow: hidden; */
-    /* background-color: aqua; */
-    height: inherit;
-    width: 33%;
+    max-width: 100%;
     gap: 10px;
+}
+
+.container .main-content .content .music:hover .overlay-icons {
+    opacity: 1;
 }
 
 .container .main-content .content .music .image{
@@ -438,7 +448,7 @@ a {
     transition: opacity 0.3s ease;
 }
 
-.container .main-content .content:hover .music .image .image-overlay {
+.container .main-content .content .music:hover .image .image-overlay {
     opacity: 1;
 }
 
@@ -487,3 +497,49 @@ a {
 .overlay-icons .thumbs.active {
     font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;
 }
+
+/* AUDIO PLAYER BAR */
+.container .audio-controls-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    /* display: none;  */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.controls span {
+    font-size: 35px;
+}
+
+.progress-container {
+    margin-top: -5px;
+}
+
+input#progress-bar {
+    width: 100vw;
+}
+
+.controls {
+    width: 100vw;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.audio-controls-bar .controls .control-left .duration-count {
+    font-size: 15px;
+}
+
+span#play-pause-button {
+    font-size: 50px;
+}
+
+.control-center, .control-right {
+    gap: 15px;
+    cursor: pointer;
+}
+
