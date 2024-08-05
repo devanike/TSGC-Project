@@ -140,6 +140,62 @@
     .container .navbar.show {
         display: block;
     }
+
+    /* MAIN-CONTENT */
+    .container .main-content {
+        margin: 0 10px;
+        width: 100%;
+    }
+
+    .container .main-content .category {
+        margin-right: 5px;
+    }
+
+    /* HEADING */
+    .container .main-content header h1 {
+        font-size: 2rem;
+    }
+
+    .container .main-content header .recent {
+        margin-right: 5px;
+    }
+
+    .overlay-icons {
+        padding-right: 15px;
+    }
+
+    /* AUDIO PLAY BAR */
+    .controls {
+        /* padding: 5px; */
+    }
+
+    .audio-controls-bar .controls .control-right span {
+        font-size: 25px;
+    }
+
+    .audio-controls-bar .controls .control-center .bar-icons span {
+        font-size: 25px;
+    }
+    
+    span#play-pause-button {
+        font-size: 30px;
+    }
+
+    .control-center, .control-right {
+        gap: 5px;
+    }
+
+    #current-artist, #current-title  {
+        font-size: 15px;
+    }
+
+    #current-artist {
+        display: block;
+    }
+
+    .song-info {
+        text-align: center;
+    }
 }
 
 /* @media screen and (min-width: 481px) and (max-width: 767px) {
@@ -205,6 +261,11 @@
 
     .container .navbar.hide {
         display: block;
+    }
+
+    /* MAIN-CONTENT */
+    .container .main-content {
+        margin-left: 120px;
     }
 }
 
@@ -275,7 +336,7 @@
     }
 
     .container .desktop-nav {
-        margin-top: 70px;
+        margin-top: 80px;
     }
 }
 

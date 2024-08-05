@@ -98,20 +98,73 @@ thumbs.forEach(thumb => {   //change this to a function
 navMenu.addEventListener("click", () => DisplayDiv(mobileSideNav))
 
 
+// SCROLLING
+const scrollAmount = 400; // Adjust scroll amount as needed
+const scrollContainer = document.getElementById('content');
+const scrollArtist = document.getElementById('artist-content');
+const scrollCategory = document.getElementById('category-content');
+const arrowRight = document.getElementById('arrow-right');
+const arrowLeft = document.getElementById('arrow-left');
+
+document.querySelectorAll('.scroll-container').forEach(container => {
+    const leftArrow = container.querySelector('.arrow-left');
+    const rightArrow = container.querySelector('.arrow-right');
+    const scrollContent = container.querySelector('.scroll-content');
+
+    if (leftArrow && rightArrow && scrollContent) {
+        leftArrow.addEventListener('click', () => ScrollLeft(scrollContent));
+        rightArrow.addEventListener('click', () => ScrollRight(scrollContent));
+    }
+});
+
+// arrowLeft.addEventListener('click', () => {
+//     ScrollLeft(scrollContainer)
+//     ScrollLeft(scrollArtist)
+//     ScrollLeft(scrollCategory)
+// })
+
+// arrowRight.addEventListener('click', () => {
+//     ScrollRight(scrollContainer)
+//     ScrollRight(scrollArtist)
+//     ScrollRight(scrollCategory)
+// })
+
+function ScrollLeft (container) {
+    container.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+function ScrollRight (container) {
+    container.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+
 // AUDIO PLAY BAR
 const musicDivs = document.querySelectorAll('.music');
 const playAudioBar = document.getElementById('play-pause-button');
 const forwardButton = document.getElementById('forward-button');
 const backwardButton = document.getElementById('backward-button');
 const shuffleButton = document.getElementById('shuffle-button');
+const repeatButton = document.getElementById('repeat-button');
+const volumeButton = document.getElementById('volume-button');
+const volumeSlider = document.getElementById('volume-slider');
 const durationBar = document.querySelector('#audio-controls-bar .duration');
 const progressBar = document.getElementById('progress-bar');
 const durationCount = document.getElementById('duration-count');
+const audioControlsBar = document.getElementById("audio-controls-bar");
+const currentArtist = document.getElementById('current-artist');
+const currentTitle = document.getElementById('current-title');
 let currentAudio = null;
 let currentPlayIcon = null;
 let currentIndex = -1;
 let progressUpdateInterval = null
 let isShuffled = false;
+let isRepeating = false;
 let shuffledList = [];
 let originalList = [];
 
@@ -120,7 +173,22 @@ let originalList = [];
 originalList = Array.from(musicDivs).map((musicDiv, index) => {
     const audioPlayer = musicDiv.querySelector('.audio-player');
     const playIcon = musicDiv.querySelector('#play-icon');
-    audioPlayer.addEventListener('ended', () => playNext());
+    // const artist = musicDiv.querySelector('.artist').textContent;
+    // const title = musicDiv.querySelector('.title').textContent;
+    const artistElement = musicDiv.querySelector('.artist');
+    const titleElement = musicDiv.querySelector('.title');
+
+    const artist = artistElement ? artistElement.textContent : 'Unknown Artist';
+    const title = titleElement ? titleElement.textContent : 'Unknown Title';
+    
+    audioPlayer.addEventListener('ended', () => {
+        if (isRepeating && audioPlayer === currentAudio) {
+            audioPlayer.currentTime = 0;
+            audioPlayer.play();
+        } else {
+            playNext();
+        }
+    });
     audioPlayer.addEventListener('loadedmetadata', () => {
         const durationElement = musicDiv.querySelector('.duration');
         const formattedDuration = formatTime(audioPlayer.duration);
@@ -129,7 +197,7 @@ originalList = Array.from(musicDivs).map((musicDiv, index) => {
             durationBar.textContent = formattedDuration;
         }
     });
-    return { audioPlayer, playIcon, index };
+    return { audioPlayer, playIcon, artist, title, index, musicDiv };
 });
 
 
@@ -154,17 +222,26 @@ musicDivs.forEach((musicDiv, index)  => {
     audioPlayer.addEventListener('play', () => {
         playIcon.textContent = 'pause';
         startProgressUpdateInterval(audioPlayer);
+        highlightCurrentMusicDiv(musicDiv);
     });
 
     audioPlayer.addEventListener('pause', () => {
         playIcon.textContent = 'play_arrow';
         clearInterval(progressUpdateInterval);
+        // removeHighlightFromMusicDiv(musicDiv);
     });
 
     audioPlayer.addEventListener('ended', () => {
         playIcon.textContent = 'play_arrow';
         clearInterval(progressUpdateInterval);
-        playNext(); // Automatically play the next song
+        removeHighlightFromMusicDiv(musicDiv);
+        // playNext(); // Automatically play the next song
+        if (isRepeating && audioPlayer === currentAudio) {
+            audioPlayer.currentTime = 0;
+            audioPlayer.play();
+        } else {
+            playNext();
+        }
     });
 
     audioPlayer.addEventListener('timeupdate', () => {
@@ -179,11 +256,15 @@ playAudioBar.addEventListener('click', () => {
             playAudioBar.textContent = 'pause';
             if (currentPlayIcon) currentPlayIcon.textContent = 'pause';
             startProgressUpdateInterval(currentAudio);
+            // shows the audio controls bar
+            audioControlsBar.classList.remove('hide-player');
         } else {
             currentAudio.pause();
             playAudioBar.textContent = 'play_arrow';
             if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
             clearInterval(progressUpdateInterval);
+            // Show the audio controls bar
+            // audioControlsBar.classList.add('hide');
         }
     }
 });
@@ -199,6 +280,17 @@ backwardButton.addEventListener('click', () => {
 progressBar.addEventListener('input', () => {
     if (currentAudio) {
         currentAudio.currentTime = (progressBar.value / 100) * currentAudio.duration;
+    }
+});
+
+// Initialize the volume slider based on the current audio volume
+if (currentAudio) {
+    volumeSlider.value = currentAudio.volume;
+}
+
+volumeSlider.addEventListener('input', () => {
+    if (currentAudio) {
+        currentAudio.volume = volumeSlider.value;
     }
 });
 
@@ -222,6 +314,12 @@ function handlePlayPause(audioPlayer, playIcon, index) {
         durationBar.textContent = formatTime(audioPlayer.duration);
         updateProgressBar(audioPlayer);
         updateDurationCount(audioPlayer);
+        volumeSlider.value = audioPlayer.volume;
+        // shows the audio controls bar
+        audioControlsBar.classList.remove('hide-player');
+        currentArtist.textContent = originalList[index].artist;
+        currentTitle.textContent = originalList[index].title;
+        highlightCurrentMusicDiv(document.querySelectorAll('.music')[index]);
     } else {
         audioPlayer.pause();
         playIcon.textContent = 'play_arrow';
@@ -230,6 +328,9 @@ function handlePlayPause(audioPlayer, playIcon, index) {
         currentPlayIcon = null;
         currentIndex = -1
         clearInterval(progressUpdateInterval);
+        // removeHighlightFromMusicDiv(document.querySelectorAll('.music')[index]);
+        // hides the audio controls bar
+        // audioControlsBar.classList.add('hide');
     }
 }
 
@@ -258,10 +359,11 @@ function playAudioAtCurrentIndex(list) {
         currentAudio.pause();
         currentAudio.currentTime = 0; // Restart the previously playing song
         if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
+        removeHighlightFromMusicDiv(document.querySelectorAll('.music')[currentIndex]);
     }
 
     // const { audioPlayer, playIcon } = audioList[currentIndex];
-    const { audioPlayer, playIcon } = list[currentIndex];
+    const { audioPlayer, playIcon, artist, title, musicDiv } = list[currentIndex];
     audioPlayer.play();
     playIcon.textContent = 'pause';
     playAudioBar.textContent = 'pause';
@@ -270,6 +372,9 @@ function playAudioAtCurrentIndex(list) {
     currentPlayIcon = playIcon;
     updateProgressBar(audioPlayer);
     updateDurationCount(audioPlayer);
+    currentArtist.textContent = artist;
+    currentTitle.textContent = title;
+    highlightCurrentMusicDiv(musicDiv);
 }
 
 function startProgressUpdateInterval(audioPlayer) {
@@ -292,10 +397,6 @@ shuffleButton.addEventListener('click', () => {
     if (isShuffled) {
         shufflePlaylist();
         shuffleButton.classList.add('active'); // Add class to indicate shuffle is active
-         // Continue playing the current song or start playing from the shuffled list
-        // if (currentAudio) {
-        //     playAudioAtCurrentIndex(shuffledList);
-        // }
         if (currentAudio) {
             // Set currentIndex to the shuffled position of the current audio
             currentIndex = shuffledList.findIndex(item => item.audioPlayer === currentAudio);
@@ -306,11 +407,6 @@ shuffleButton.addEventListener('click', () => {
     } else {
         shuffledList = [];
         shuffleButton.classList.remove('active'); // Remove class to indicate shuffle is inactive
-        // Reset to the original list if shuffle is turned off
-        // if (currentAudio) {
-        //     currentIndex = originalList.findIndex(item => item.audioPlayer === currentAudio);
-        //     playAudioAtCurrentIndex(originalList);
-        // }
         if (currentAudio) {
             // Set currentIndex to the original position of the current audio
             currentIndex = originalList.findIndex(item => item.audioPlayer === currentAudio);
@@ -319,16 +415,38 @@ shuffleButton.addEventListener('click', () => {
             }
         }
     }
-    playAudioAtCurrentIndex(isShuffled ? shuffledList : originalList);
-    // if (currentAudio) {
-    //     playNext(); // Restart with the shuffled list
-    // }
+})
+
+repeatButton.addEventListener('click', () => {
+    isRepeating = !isRepeating;
+    repeatButton.classList.toggle('active', isRepeating); // Toggle class to indicate repeat is active
+    if (isRepeating && currentAudio) {
+        currentAudio.addEventListener('ended', () => {
+            if (isRepeating && currentAudio) {
+                currentAudio.currentTime = 0;
+                currentAudio.play();
+            }
+        }, { once: true }); // ensures that the event handler is only invoked once per repeat
+    }
 });
+
 
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
 }
+
+function highlightCurrentMusicDiv(musicDiv) {
+    // Remove 'active' class from all music divs
+    document.querySelectorAll('.music').forEach(div => div.classList.remove('active'));
+    // Add 'active' class to the currently playing music div
+    musicDiv.classList.add('active');
+}
+
+function removeHighlightFromMusicDiv(musicDiv) {
+    musicDiv.classList.remove('active');
+}
+
 
 
