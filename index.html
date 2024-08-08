@@ -11,7 +11,7 @@
     <title>Home</title>
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <header class="topbar" id="topbar">
             <div class="top-content grid" id="top-content">
                 <div class="left-content flex">
@@ -108,10 +108,12 @@
                     </a>
                 </li>
             </ul>
+
+
         </nav>
 
         <!-- DESKTOP NAV MENU -->
-        <nav class="desktop-nav" id="desktop-nav">
+        <nav class="desktop-nav hide" id="desktop-nav">
             <!-- <div class="top flex">
                 <span class="material-symbols-outlined" id="close">close</span>
                 <img src="YT_Music.svg.png" class="logo" alt="Logo">
@@ -154,10 +156,27 @@
                     </a>
                 </li>
             </ul>
+            <section class="events-container">
+                <h1>Upcoming Events</h1>
+                <div class="events">
+                    <div class="event fade">
+                        <img src="images/events-colorful-typography-banner-260nw-1356206768.webp" alt="Upcoming Event">
+                    </div>
+                    <div class="event fade">
+                        <img src="images/events-handdrawn-vector-typography-banner-260nw-1435628675.webp" alt="Upcoming Event">
+                    </div>
+                    <div class="event fade">
+                        <img src="images/upcoming-events.jpg" alt="Upcoming Event">
+                    </div>
+                    <div class="event fade">
+                        <img src="images/images.jpeg" alt="Upcoming Event">
+                    </div>
+                </div>
+            </section>
         </nav>
 
         <!-- Main Content -->
-        <section class="main-content">
+        <main class="main-content">
             <article class="category">
                 <ul class="flex">
                     <li>
@@ -183,23 +202,25 @@
                     </li>
                 </ul>
             </article>
+
             <!-- MAIN CONTENT HEADING -->
-            <header class="">
+            <header>
                 <h1>Welcome <span>Grace</span></h1>
                 <div class="recent flex">
                     <div class="heading flex">
                         <h2>Recent Messages</h2>
-                        <a href="#" class="button">Play all</a>
+                        <a href="All Messages.html" class="button">Play all</a>
                     </div>
                     <div class="arrows flex">
-                        <span class="material-symbols-outlined arrow-left">keyboard_arrow_left</span>
-                        <span class="material-symbols-outlined arrow-right">keyboard_arrow_right</span>
+                        <span class="material-symbols-outlined arrow-left-1">keyboard_arrow_left</span>
+                        <span class="material-symbols-outlined arrow-right-1">keyboard_arrow_right</span>
                     </div>
                 </div>
             </header>
 
             <!-- CONTENT -->
-            <div class="content grid scroll-container" id="content">
+            <!--  -->
+            <div class="content grid" id="content">
                 <div class="music flex" id="music1">
                     <div class="image">
                         <img src="images/AEO.png" alt="Gratitude by Anendlessocean">
@@ -208,11 +229,12 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
+                        <!-- <h2>Gratitude</h2> -->
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -234,11 +256,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Fall On Me</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Fall On Me" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="A Great Big World" data-src="A Great Big World & Christina Aguilera - Fall On Me (Official).mp3">Fall On Me</a></h2>
                         <div class="info">
                             <a href="#" class="artist">A Great Big World</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Fall On Me</a>
+                            <a href="#" class="title song-title" data-song="Fall On Me" data-image="images/AEO.png" data-artist="A Great Big World" data-src="A Great Big World & Christina Aguilera - Fall On Me (Official).mp3">Fall On Me</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -260,11 +282,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Maverick_City_Music_Firm_Foundation_He_Won_t_feat_Cody_Car.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Maverick_City_Music_Firm_Foundation_He_Won_t_feat_Cody_Car.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -286,11 +308,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -311,11 +333,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -336,11 +358,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -361,11 +383,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -390,7 +412,7 @@
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -411,11 +433,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <!-- <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a> -->
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -436,11 +458,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -461,11 +483,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -486,11 +508,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -511,11 +533,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -536,11 +558,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -561,11 +583,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#"  class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -586,11 +608,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -611,11 +633,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -636,11 +658,11 @@
                         </div>
                     </div>
                     <div class="music-info">
-                        <h2><a href="#">Gratitude</a></h2>
+                        <h2><a href="#" class="song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a></h2>
                         <div class="info">
                             <a href="#" class="artist">Anendlessocean</a>
                             <span class="material-symbols-outlined">circle</span>
-                            <a href="#" class="title">Gratitude</a>
+                            <a href="#" class="title song-title" data-song="Gratitude" data-image="images/AEO.png" data-image="images/AEO.png" data-artist="Anendlessocean" data-src="Anendlessocean - Gratitude.mp3">Gratitude</a>
                         </div>
                         <p class="duration"></p>
                     </div>
@@ -656,7 +678,7 @@
             </div>
 
             <!-- CATEGORY CONTENT -->
-            <section class="category-content">
+            <section class="category-content scroll-container">
                 <header class="flex">
                     <h2>Categories</h2>
                     <div class="arrows flex">
@@ -664,7 +686,7 @@
                         <span class="material-symbols-outlined arrow-right">keyboard_arrow_right</span>
                     </div>
                 </header>
-                <div class="categories flex scroll-container" id="category-content">
+                <div class="categories flex scroll-content" id="category-content">
                     <div class="category grid">
                         <a href="#">
                             <img src="images/worthy.jpg" alt="Category Image" id="category-image">
@@ -723,7 +745,7 @@
             </section>
 
             <!-- ARTIST SECTION -->
-            <section class="artist-content">
+            <section class="artist-content scroll-container">
                 <header class="flex">
                     <h2>Artist</h2>
                     <div class="arrows flex">
@@ -731,7 +753,7 @@
                         <span class="material-symbols-outlined arrow-right">keyboard_arrow_right</span>
                     </div>
                 </header>
-                <div class="artists flex scroll-container" id="artist-content">
+                <div class="artists flex scroll-content" id="artist-content">
                     <div class="artist grid">
                         <a href="#">
                             <img src="images/Anendlessocean-1.webp" alt="Artist Image" id="artist-image">
@@ -810,7 +832,7 @@
             </audio>
         </div>
 
-    </div>
+    </main>
 
     <script src="script.js" type="module"></script> 
 </body>

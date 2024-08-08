@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="styles.css" rel="stylesheet">
+    <link href="queries.css" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <header class="topbar" id="topbar">
+            <div class="top-content grid" id="top-content">
+                <div class="left-content flex">
+                    <span class="material-symbols-outlined" id="menu">menu</span>
+                    <img src="images/YT_Music.svg.png" class="logo" alt="Logo">
+                </div>
+                <div class="center-content flex" id="center-content">
+                    <span class="material-symbols-outlined hide" id="search-icon">search</span>
+                    <div class="search flex" id="search">
+                        <span class="material-symbols-outlined">search</span>
+                        <input type="search" class="hidden" id="search-input" name="search-input" placeholder="Search messages, songs ...">
+                        <span class="material-symbols-outlined" id="clear">close</span>
+                    </div>
+                </div>
+                <div class="right-content flex">
+                    <p class="profile-name">Grace</p>
+                    <div class="profile">
+                        <img src="images/person2.jpg" alt="Profile Picture" id="profile-pic">
+                        <div class="profile-dropdown hide" id="profile-dropdown">
+                            <ul class="grid">
+                                <li>
+                                    <a href="#" class="flex">
+                                        <span class="material-symbols-outlined">person</span>
+                                        <p>My Profile</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex">
+                                        <span class="material-symbols-outlined">key</span>
+                                        <p>Change Password</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex">
+                                        <span class="material-symbols-outlined">subscriptions</span>
+                                        <p>Subscription Plan</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex">
+                                        <span class="material-symbols-outlined">logout</span>
+                                        <p>Sign Out</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="mobile-search flex hide" id="mobile-search">
+            <span class="material-symbols-outlined" id="close-search">arrow_back</span>
+            <input type="search" class="hidden" id="mobile-search-input" name="search-input" placeholder="Search messages, songs ...">
+            <span class="material-symbols-outlined mobile-clear" id="mobile-clear">close</span>
+        </div>
+
+        <!-- NAV MENU -->
+        <nav class="navbar hide" id="navbar">
+            <ul class="navlist grid">
+                <li class="navitem" >
+                    <a href="index.html">
+                        <span class="material-symbols-outlined">home</span>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="All Messages.html">
+                        <span class="material-symbols-outlined">mail</span>
+                        <p>All <br>Messages</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="Ministers.html">
+                        <span class="material-symbols-outlined">boy</span>
+                        <p>Ministers</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="Meetings.html">
+                        <span class="material-symbols-outlined">meeting_room</span>
+                        <p>Meetings</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="Worship.html">
+                        <span class="material-symbols-outlined">library_music</span>
+                        <p>Worship</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="Songs.html">
+                        <span class="material-symbols-outlined">genres</span>
+                        <p>Songs <br>Birthed By <br>TSGC</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- DESKTOP NAV MENU -->
+        <nav class="desktop-nav hide" id="desktop-nav">
+            <!-- <div class="top flex">
+                <span class="material-symbols-outlined" id="close">close</span>
+                <img src="YT_Music.svg.png" class="logo" alt="Logo">
+            </div> -->
+            <ul class="grid">
+                <li class="navitem" >
+                    <a href="index.html" class="flex">
+                        <span class="material-symbols-outlined">home</span>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="All Messages.html" class="flex">
+                        <span class="material-symbols-outlined">mail</span>
+                        <p>All Messages</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="Ministers.html" class="flex">
+                        <span class="material-symbols-outlined">boy</span>
+                        <p>Ministers</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="Meetings.html" class="flex">
+                        <span class="material-symbols-outlined">meeting_room</span>
+                        <p>Meetings</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="Worship.html" class="flex">
+                        <span class="material-symbols-outlined">library_music</span>
+                        <p>Worship</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="Songs.html" class="flex">
+                        <span class="material-symbols-outlined">genres</span>
+                        <p>Songs Birthed <br>By TSGC</p>
+                    </a>
+                </li>
+            </ul>
+            <section class="events-container">
+                <h1>Upcoming Events</h1>
+                <div class="events">
+                    <div class="event fade">
+                        <img src="images/events-colorful-typography-banner-260nw-1356206768.webp" alt="Upcoming Event">
+                    </div>
+                    <div class="event fade">
+                        <img src="images/events-handdrawn-vector-typography-banner-260nw-1435628675.webp" alt="Upcoming Event">
+                    </div>
+                    <div class="event fade">
+                        <img src="images/upcoming-events.jpg" alt="Upcoming Event">
+                    </div>
+                    <div class="event fade">
+                        <img src="images/images.jpeg" alt="Upcoming Event">
+                    </div>
+                </div>
+            </section>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <section class="main-content">
+            <div class="song-content flex">
+                <img id="song-image" src="" alt="Album Art" />
+                <div class="song-details">
+                    <h2 id="song-title"></h2>
+                    <h3 id="artist-name"></h3>
+                    <h4 class="duration"></h4>
+                </div>
+                <div class="thumb-icon flex">
+                    <span class="material-symbols-outlined thumbs">thumb_up</span>
+                    <span class="material-symbols-outlined thumbs">thumb_down</span>
+                </div>
+            </div>
+            <div id="audio-player-container">
+                <audio id="audio-player">
+                    <source id="audio-source" src="" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </section>
+
+
+        <!-- AUDIO PLAY BAR -->
+        <div class="audio-controls-bar grid" id="audio-controls-bar">
+            <div class="progress-container">
+                <input id="progress-bar" type="range" value="0" min="0" max="100" step="0.1">
+            </div>
+            <div class="controls flex">
+                <div class="control-left">
+                    <span id="duration-count" class="duration-count">0:00/<span class="duration"></span></span>
+                </div>
+                <div class="control-center grid">
+                    <div class="song-info">
+                        <span id="current-title"></span> - <span id="current-artist"></span>
+                    </div>
+                    <div class="bar-icons flex">
+                        <span id="backward-button" class="material-symbols-outlined control-button">skip_previous</span>
+                        <span id="play-pause-button" class="material-symbols-outlined control-button">play_arrow</span>
+                        <span id="forward-button" class="material-symbols-outlined control-button">skip_next</span>
+                    </div>
+                </div>
+                <div class="control-right flex">
+                    <span id="volume-button" class="material-symbols-outlined control-button">volume_up</span>
+                    <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1">
+                    <span id="shuffle-button" class="material-symbols-outlined control-button">shuffle</span>
+                    <span id="repeat-button" class="material-symbols-outlined control-button">repeat</span>
+                </div>
+            </div>
+            <audio id="bottom-audio">
+                <!-- <source src="Anendlessocean - Gratitude.mp3" type="audio/mpeg"> -->
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName('event');
+
+                // Hide all slides
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+
+                // Increment slideIndex and reset if it exceeds the number of slides
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+
+                // Display the current slide
+                slides[slideIndex - 1].style.display = "block";
+
+                // Call showSlides function recursively after 3 seconds (3000 milliseconds)
+                setTimeout(showSlides, 3000); // Change image every 3 seconds
+            }
+            
+            // Retrieve song details from localStorage
+            const currentSong = JSON.parse(localStorage.getItem('currentSong'));
+            const audioPlayer = document.getElementById('audio-player');
+            const playPauseButton = document.getElementById('play-pause-button');
+            const durationCount = document.getElementById('duration-count');
+            const durationSpan = document.querySelector('.duration');
+            const currentArtist = document.getElementById('current-artist');
+            const currentTitle = document.getElementById('current-title');
+            const progressBar = document.getElementById('progress-bar');
+            const volumeButton = document.getElementById('volume-button');
+            const volumeSlider = document.getElementById('volume-slider');
+            const repeatButton = document.getElementById('repeat-button');
+            const songImage = document.getElementById('song-image');
+            const backwardButton = document.getElementById('backward-button');
+
+            const formatTime = (time) => {
+                const minutes = Math.floor(time / 60);
+                const seconds = Math.floor(time % 60);
+                return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            };
+
+            const updateDuration = () => {
+                if (audioPlayer.duration) {
+                    durationCount.textContent = `${formatTime(audioPlayer.currentTime)}/${formatTime(audioPlayer.duration)}`;
+                    durationSpan.textContent = formatTime(audioPlayer.duration);
+                    progressBar.max = audioPlayer.duration; //  max value of progress bar
+                }
+            };
+
+            const updateVolumeIcon = () => {
+                const volume = audioPlayer.volume;
+                if (volume === 0) {
+                    volumeButton.textContent = 'volume_off'; // Volume off
+                } else if (volume <= 0.5) {
+                    volumeButton.textContent = 'volume_down'; // Low volume
+                } else {
+                    volumeButton.textContent = 'volume_up'; // High volume
+                }
+            };
+
+            const toggleRepeat = () => {
+                switch (repeatButton.dataset.repeat) {
+                    case 'off':
+                        repeatButton.dataset.repeat = 'one';
+                        repeatButton.textContent = 'repeat_one'; // Change icon to repeat one
+                        break;
+                    case 'one':
+                        repeatButton.dataset.repeat = 'off';
+                        repeatButton.textContent = 'repeat'; // Change icon to repeat off
+                        break;
+                    default:
+                        repeatButton.dataset.repeat = 'one';
+                        repeatButton.textContent = 'repeat_one'; // Default to repeat one
+                }
+            };
+
+
+            if (currentSong) {
+                // Update the audio player with the song details
+                document.getElementById('song-title').textContent = currentSong.song_title;
+                document.getElementById('artist-name').textContent = currentSong.artist;
+                document.getElementById('audio-source').src = currentSong.src;
+                songImage.src = currentSong.image;
+                document.getElementById('audio-player').load(); // Load the new audio source
+                document.getElementById('audio-player').play(); // Start playing the song
+
+                // Set the initial state of the play/pause button
+                const playPauseButton = document.getElementById('play-pause-button');
+                playPauseButton.textContent = 'pause'; // Set initial state to pause
+
+                currentTitle.textContent = currentSong.song_title
+                currentArtist.textContent = currentSong.artist
+                
+                // Check if there is a stored playback time
+                const storedTime = parseFloat(localStorage.getItem('audioPlayerCurrentTime'));
+                if (!isNaN(storedTime)) {
+                    audioPlayer.currentTime = storedTime; // Set the current playback time
+                }
+
+                // Start playing the song if it was playing before refresh
+                if (localStorage.getItem('audioPlayerPlaying') === 'true') {
+                    audioPlayer.play(); // Start playing the song
+                    playPauseButton.textContent = 'pause'; // Change icon to pause
+                }else {
+                    playPauseButton.textContent = 'play_arrow'; // Change icon to play
+                }
+
+                playPauseButton.textContent = 'play_arrow';
+
+                playPauseButton.addEventListener('click', () => {
+                    if (audioPlayer.paused) {
+                        audioPlayer.play(); // Play the audio
+                        playPauseButton.textContent = 'pause'; // Change icon to pause
+                        localStorage.setItem('audioPlayerPlaying', 'true');
+                    } else {
+                        audioPlayer.pause(); // Pause the audio
+                        playPauseButton.textContent = 'play_arrow'; // Change icon to play
+                        localStorage.setItem('audioPlayerPlaying', 'false');
+                    }
+                });
+
+                backwardButton.addEventListener('click', () => {
+                    audioPlayer.currentTime = 0; // Set the current playback time to 0
+                    audioPlayer.play(); // Start playing the audio
+                    playPauseButton.textContent = 'pause'; // Change icon to pause
+                    localStorage.setItem('audioPlayerPlaying', 'true');
+                });
+
+                // Update the play/pause button when the audio ends
+                audioPlayer.addEventListener('ended', () => {
+                    if (repeatButton.dataset.repeat === 'one') {
+                        audioPlayer.currentTime = 0; // Restart the song
+                        audioPlayer.play(); // Play the song again
+                    } else {
+                        playPauseButton.textContent = 'play_arrow'; // Change icon to play
+                        localStorage.setItem('audioPlayerPlaying', 'false');
+                    }
+                });
+
+                 // Update duration when audio metadata is loaded
+                audioPlayer.addEventListener('loadedmetadata', updateDuration);
+
+                // Update current time while the audio is playing
+                audioPlayer.addEventListener('timeupdate', () => {
+                    durationCount.textContent = `${formatTime(audioPlayer.currentTime)}/${formatTime(audioPlayer.duration)}`;
+                    progressBar.value = audioPlayer.currentTime;
+                    // Store current playback time in localStorage
+                    localStorage.setItem('audioPlayerCurrentTime', audioPlayer.currentTime.toString());
+                });
+
+                // Seek through the song when the user interacts with the progress bar
+                progressBar.addEventListener('input', () => {
+                    audioPlayer.currentTime = progressBar.value; // Seek to the new time
+                });
+
+                // Update volume slider and button when the audio is loaded
+                audioPlayer.addEventListener('loadeddata', () => {
+                    volumeSlider.value = audioPlayer.volume; // Set initial volume slider value
+                    updateVolumeIcon(); // Update volume button icon
+                });
+
+                // Update audio volume when the slider value changes
+                volumeSlider.addEventListener('input', () => {
+                    audioPlayer.volume = volumeSlider.value; // Set audio volume
+                    updateVolumeIcon(); // Update volume button icon
+                });
+
+                // Toggle mute and unmute when the volume button is clicked
+                volumeButton.addEventListener('click', () => {
+                    if (audioPlayer.volume > 0) {
+                        audioPlayer.volume = 0; // Mute the audio
+                        volumeSlider.value = 0; // Update volume slider
+                        volumeButton.textContent = 'volume_off'; // Change icon to volume off
+                    } else {
+                        audioPlayer.volume = 1; // Restore the audio volume
+                        volumeSlider.value = 1; // Update volume slider
+                        volumeButton.textContent = 'volume_up'; // Change icon to volume up
+                    }
+                });
+
+                // repeat button click
+                repeatButton.addEventListener('click', toggleRepeat);
+            }
+        });
+    </script>
+
+
+    <script src="script.js" type="module"></script> 
+</body>
+</html>

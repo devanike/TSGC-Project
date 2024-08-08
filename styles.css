@@ -315,6 +315,7 @@ a {
     font-size: 15px;
 }
 
+
 /* MOBILE SEARCH BAR */
 .container .mobile-search {
     display: none;
@@ -420,27 +421,27 @@ a {
     overflow-x: auto;
 }
 
-.container .main-content .content .music {
+.music {
     position: relative;
     max-width: 100%;
     gap: 10px;
 }
 
-.container .main-content .content .music.active {
+.music.active {
     background-color: var(--grey);
 }
 
 
-.container .main-content .content .music:hover .overlay-icons {
+.music:hover .overlay-icons {
     opacity: 1;
 }
 
-.container .main-content .content .music .image{
+.music .image{
     position: relative;
     overflow: hidden;
 }
 
-.container .main-content .content .music .image img {
+.music .image img {
     border-radius: 15px;
     position: relative;
     overflow: hidden;
@@ -448,7 +449,7 @@ a {
     /* height: 60px; */
 }
 
-.container .main-content .content .music .image .image-overlay {
+.music .image .image-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -463,34 +464,34 @@ a {
     transition: opacity 0.3s ease;
 }
 
-.container .main-content .content .music:hover .image .image-overlay {
+.music:hover .image .image-overlay {
     opacity: 1;
 }
 
-.container .main-content .content .music .image .image-overlay span {
+.music .image .image-overlay span {
     font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;
     color: white;
     cursor: pointer;
 }
 
-.container .main-content .content .music .music-info h2 {
+.music .music-info h2 {
     font-size: 17px;
     margin-bottom: 2px;
 }
 
-.container .main-content .content .music .music-info p {
+.music .music-info p {
     font-size: 15px;
 }
 
-.container .main-content .content .music .music-info .info a {
+.music .music-info .info a {
     font-size: 15px;
 }
 
-.container .main-content .content .music .music-info .info a:hover {
+.music .music-info .info a:hover {
     text-decoration: underline;
 }
 
-.container .main-content .content .music .music-info .info span {
+.music .music-info .info span {
     font-size: 5px;
     font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;
 }
@@ -618,7 +619,9 @@ span#play-pause-button {
 }
 
 .container .main-content .category-content .categories .category a,
-.container .main-content .artist-content .artists .artist a {
+.container .main-content .artist-content .artists .artist a,
+.container .main-content .ministers .minister a,
+.container .main-content .meetings .meeting a {
     display: block;
     position: relative;
 }
@@ -626,10 +629,13 @@ span#play-pause-button {
 .container .main-content .category-content .categories .category a img,
 .container .main-content .artist-content .artists .artist a img {
     width: 200px;
+    border-radius: 30px;
 }
 
 .container .main-content .category-content .categories .category a .overlay-category,
-.container .main-content .artist-content .artists .artist a .overlay-artist {
+.container .main-content .artist-content .artists .artist a .overlay-artist,
+.container .main-content .ministers .minister a .overlay-minister, 
+.container .main-content .meetings .meeting a .overlay-meeting {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -646,13 +652,103 @@ span#play-pause-button {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
 }
 
 .container .main-content .category-content .categories .category:hover a .overlay-category,
-.container .main-content .artist-content .artists .artist:hover a .overlay-artist {
+.container .main-content .artist-content .artists .artist:hover a .overlay-artist,
+.container .main-content .ministers .minister:hover a .overlay-minister,
+.container .main-content .meetings .meeting:hover a .overlay-meeting {
     opacity: 1;
 }
 
-/* ARTIST SECTION */
+/* TITLE LINK PAGE */
+.container .main-content .song-content {
+    padding-left: 50px;
+    gap: 25px;
+}
 
+.container .main-content .song-content img {
+    width: 300px;
+    height: 300px;
+}
+
+.container .main-content .song-content .thumb-icon {
+    gap: 10px;
+}
+
+.container .main-content .song-content .thumb-icon .thumbs{
+    cursor: pointer;    
+}
+
+.container .main-content .song-content .thumb-icon .thumbs.active{
+    font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+}
+
+/* ALL MESSAGES */
+.container .main-content .all-messages .message {
+    margin-top: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 5px 0;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.container .main-content .all-messages .message .music {
+    width: 23%;
+}
+
+/* ALL MINISTERS AND MEETINGS*/
+.container .main-content .ministers,
+.container .main-content .meetings{
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.container .main-content .ministers .minister a img,
+.container .main-content .meetings .meeting a img {
+    width: 200px;
+    border-radius: 30px;
+}
+
+/* EVENTS */
+.events-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.events-container h1 {
+    font-size: 17px;
+    text-align: center;
+}
+
+.events-container .events {
+    width: 100%;
+    /* position: relative; */
+}
+
+.events-container .events .event {
+    display: none;
+}
+
+.events-container .events .event img {
+    height: 150px;
+}
+
+#events2 .event img {
+    width: 100%;
+    height: 400px;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
 

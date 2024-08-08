@@ -196,11 +196,73 @@
     .song-info {
         text-align: center;
     }
+
+    /* CATEGORY AND ARTIST SECTION */
+    .container .main-content .category-content .categories .category a img,
+    .container .main-content .artist-content .artists .artist a img {
+        width: 100px;
+    }
+
+    /* TITLE LINK PAGE */
+    .container .main-content .song-content {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .container .main-content .song-content .song-details {
+        text-align: center;
+    }
+
+    .container .main-content .song-content img {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* All Messages */
+    .container .main-content .all-messages .message {
+        flex-wrap: no-wrap;
+    }
+
+    .container .main-content .all-messages .message .music {
+        width: 100%;
+    }
+    
+    /* MINISTERS AND MEETINGS*/
+    .container .main-content .ministers,
+    .container .main-content .meetings {
+        justify-content: center;
+    }
+
+    .container .main-content .ministers .minister a img {
+        width: 120px;
+    }
+
 }
 
-/* @media screen and (min-width: 481px) and (max-width: 767px) {
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    /* TITLE LINK PAGE */
+    .container .main-content .song-content {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
 
-} */
+    .container .main-content .song-content .song-details {
+        text-align: center;
+    }
+
+    .container .main-content .song-content img {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* MINISTERS AND MEETINGS*/
+    .container .main-content .ministers,
+    .container .main-content .meetings {
+        justify-content: center;
+    }
+}
 
 /* MOBILE AND TABLET */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
@@ -215,6 +277,11 @@
         padding-right: 10px;
     }
 
+    .container .topbar .top-content .left-content span {
+        display: block;
+    }
+
+
     .container .topbar .top-content .left-content img {
         width: 80px;
         margin: 0;
@@ -226,7 +293,7 @@
     }
 
     .container .topbar .top-content .center-content .search {
-        width: 90%;
+        width: 60%;
     }
 
     .container .topbar .top-content .center-content .search input {
@@ -251,21 +318,34 @@
         margin-right: 5px;
     }
 
-    .container .desktop-nav {
+    /* .container .desktop-nav {
+        display: none;
+    } */
+
+    .container .desktop.hide {
         display: none;
     }
 
-    .container .navbar {
-        margin-top: 80px;
-    }
-
-    .container .navbar.hide {
+    .container .desktop.show {
         display: block;
     }
 
     /* MAIN-CONTENT */
     .container .main-content {
-        margin-left: 120px;
+        margin-left: 20px;
+        /* margin-right: 20px; */
+        width: 96%;
+    }
+
+     /* All Messages */
+    .container .main-content .all-messages .message .music {
+        width: 47%;
+    }
+
+    /* MINISTERS AND MEETINGS*/
+    .container .main-content .ministers,
+    .container .main-content .meetings {
+        justify-content: center;
     }
 }
 
@@ -297,7 +377,7 @@
 
     .container .topbar .top-content .center-content .search {
         justify-items: start;
-        width: 80%;
+        width: 50%;
     }
     
     .container .topbar .top-content .center-content .search input {
@@ -335,8 +415,24 @@
         font-size: 30px;
     }
 
+    .desktop-nav.hide {
+        display: block;
+    }
+
     .container .desktop-nav {
         margin-top: 80px;
+    }
+
+    /* All Messages */
+    /* .container .main-content .all-messages .message .music {
+        width: 31%;
+    } */
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px){
+    /* All Messages */
+    .container .main-content .all-messages .message .music {
+        width: 41%;
     }
 }
 
@@ -378,6 +474,11 @@
         font-size: 15px;
     }
 
+    /* All Messages */
+    /* .container .main-content .all-messages .message .music {
+        width: 41%;
+    } */
+
 }
 
 /* BIGGER SCREENS */
@@ -408,6 +509,10 @@
 
     .container .topbar .top-content .right-content .profile .profile-dropdown {
         right: 20%;
+    }
+
+    .desktop-nav.hide {
+        display: block;
     }
 
     .container .desktop-nav ul li a p { 

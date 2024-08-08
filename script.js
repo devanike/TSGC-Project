@@ -7,6 +7,7 @@ const navItems = document.querySelectorAll(".navitem")
 // const hiddenNav = document.getElementById("hidden-nav")
 const closeBtn = document.getElementById("close")
 const mobileSideNav = document.getElementById("navbar")
+const desktopSideNav = document.getElementById("desktop-nav")
 const searchIcon = document.getElementById("search-icon")
 const closeSearchBar = document.getElementById("close-search")
 const clearSearchBar = document.getElementById("mobile-clear")
@@ -16,16 +17,6 @@ const thumbs = document.querySelectorAll(".thumbs")
 // const playPauseIcon = document.getElementById("play-icon")
 const playIcons = document.querySelectorAll('.image-overlay > span');
 
-
-// setting the height of the topbar and topcontent divs
-// topBar.style.height = topContent.offsetHeight + 'px';
-
-// clearing the search field
-// clearSearchField.addEventListener("click", () => {
-//     searchInput.value = '';
-//     clearSearchField.style.display = 'none';
-//     searchInput.focus();
-// })
 
 function clearInputField(input, icon) {
     input.value = ""
@@ -84,6 +75,7 @@ navItems.forEach(navItem => {   //change this to a function
     })
 })
 
+
 // Toggling the active class on the thumbs
 thumbs.forEach(thumb => {   //change this to a function
     thumb.addEventListener('click', function() {
@@ -96,15 +88,18 @@ thumbs.forEach(thumb => {   //change this to a function
 })
 
 navMenu.addEventListener("click", () => DisplayDiv(mobileSideNav))
+navMenu.addEventListener("click", () => DisplayDiv(desktopSideNav))
 
 
-// SCROLLING
-const scrollAmount = 400; // Adjust scroll amount as needed
+// SCROLLING ---NOT WORKING YET
+const scrollAmount = 400;
 const scrollContainer = document.getElementById('content');
 const scrollArtist = document.getElementById('artist-content');
 const scrollCategory = document.getElementById('category-content');
 const arrowRight = document.getElementById('arrow-right');
+const arrowRight1 = document.querySelector('.arrow-right-1');
 const arrowLeft = document.getElementById('arrow-left');
+const arrowLeft1 = document.querySelector('.arrow-left-1');
 
 document.querySelectorAll('.scroll-container').forEach(container => {
     const leftArrow = container.querySelector('.arrow-left');
@@ -116,18 +111,6 @@ document.querySelectorAll('.scroll-container').forEach(container => {
         rightArrow.addEventListener('click', () => ScrollRight(scrollContent));
     }
 });
-
-// arrowLeft.addEventListener('click', () => {
-//     ScrollLeft(scrollContainer)
-//     ScrollLeft(scrollArtist)
-//     ScrollLeft(scrollCategory)
-// })
-
-// arrowRight.addEventListener('click', () => {
-//     ScrollRight(scrollContainer)
-//     ScrollRight(scrollArtist)
-//     ScrollRight(scrollCategory)
-// })
 
 function ScrollLeft (container) {
     container.scrollBy({
@@ -142,6 +125,15 @@ function ScrollRight (container) {
         behavior: 'smooth'
     });
 }
+
+arrowLeft1.addEventListener('click', () => {
+    ScrollLeft(scrollContainer)
+})
+
+arrowRight1.addEventListener('click', () => {
+    ScrollRight(scrollContainer)
+})
+
 
 
 // AUDIO PLAY BAR
@@ -173,8 +165,7 @@ let originalList = [];
 originalList = Array.from(musicDivs).map((musicDiv, index) => {
     const audioPlayer = musicDiv.querySelector('.audio-player');
     const playIcon = musicDiv.querySelector('#play-icon');
-    // const artist = musicDiv.querySelector('.artist').textContent;
-    // const title = musicDiv.querySelector('.title').textContent;
+
     const artistElement = musicDiv.querySelector('.artist');
     const titleElement = musicDiv.querySelector('.title');
 
@@ -448,5 +439,58 @@ function removeHighlightFromMusicDiv(musicDiv) {
     musicDiv.classList.remove('active');
 }
 
+// moving to a new page when the song title is clicked
+document.querySelectorAll('.song-title').forEach(title => {
+    title.addEventListener('click', event => {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Get song details from data attributes
+        const song_title = event.target.getAttribute('data-song');
+        const artist = event.target.getAttribute('data-artist');
+        const src = event.target.getAttribute('data-src');
+        const image = event.target.getAttribute('data-image');
+
+        // Store song details in localStorage
+        localStorage.setItem('currentSong', JSON.stringify({ song_title, artist, src, image }));
+
+        // Redirect to the new page
+        window.location.href = 'Song-Title.html'; // Change this to your target page
+    });
+});
+
+// change this to a function
+document.querySelectorAll('.song-title').forEach(title => {
+    title.addEventListener('click', event => {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Get song details from data attributes
+        const song_title = event.target.getAttribute('data-song');
+        const artist = event.target.getAttribute('data-artist');
+        const src = event.target.getAttribute('data-src');
+        const image = event.target.getAttribute('data-image');
+
+        // Store song details in localStorage
+        localStorage.setItem('currentSong', JSON.stringify({ song_title, artist, src, image }));
+
+        // Redirect to the new page
+        window.location.href = 'Song-Title.html'; // Change this to your target page
+    });
+});
 
 
+// EVENT SLIDE
+let slideIndex = 0
+showSlides()
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName('event')
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
