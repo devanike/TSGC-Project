@@ -203,18 +203,21 @@
         width: 100px;
     }
 
-    /* TITLE LINK PAGE */
-    .container .main-content .song-content {
+    /* TITLE LINK AND MINISTER PAGE */
+    .container .main-content .song-content,
+    .container .main-content .minister-content {
         flex-direction: column;
         width: 100%;
         padding: 0;
     }
 
-    .container .main-content .song-content .song-details {
+    .container .main-content .song-content .song-details,
+    .container .main-content .minister-content .minister-details {
         text-align: center;
     }
 
-    .container .main-content .song-content img {
+    .container .main-content .song-content img,
+    .container .main-content .minister-content img {
         width: 200px;
         height: 200px;
     }
@@ -445,6 +448,10 @@
 
     .container .topbar .top-content .right-content {
         gap: 20px;
+    }
+
+    .container .topbar .top-content .center-content .search{
+        width: 90%;
     }
 
     .container .topbar .top-content .center-content .search input {

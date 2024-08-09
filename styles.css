@@ -14,6 +14,7 @@ body {
     width: 100%;
     font-family: "Roboto", sans-serif;
     background-color: var(--bgcolor);
+    overflow: hidden;
     /* height: 100vh; */
 }
 
@@ -357,7 +358,6 @@ a {
     margin-top: 40px;
     max-width: 100%;
     gap: 10px;
-    /* grid-template-columns: 80% 10%; */
 }
 
 .container .main-content header h1 {
@@ -662,15 +662,39 @@ span#play-pause-button {
     opacity: 1;
 }
 
-/* TITLE LINK PAGE */
-.container .main-content .song-content {
+/* TITLE LINK AND MINISTER PAGE */
+.container .main-content .song-content,
+.container .main-content .minister-content {
     padding-left: 50px;
     gap: 25px;
 }
 
-.container .main-content .song-content img {
+.container .main-content .song-content img,
+.container .main-content .minister-content img {
     width: 300px;
     height: 300px;
+    border-radius: 30px;
+}
+
+.container .main-content .minister-content {
+    margin-bottom: 20px;
+}
+
+.container .main-content .song-content .song-details input[type="button"] {
+    background-color: var(--grey);
+    color: black;
+    cursor: pointer;
+    margin-top: 10px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.container .main-content .song-content .song-details input[type="button"]:hover {
+    background-color: var(--bgcolor);
+    border: solid 2px var(--grey);
 }
 
 .container .main-content .song-content .thumb-icon {

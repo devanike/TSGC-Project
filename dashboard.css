@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    height: 100vh;
+    width: 100vw;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(images/33568.jpg) center top no-repeat;
+    background-size: cover;
+    overflow: hidden;
+} */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.upload-container {
+    width: 670px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    /* margin-right: 70px; */
+    background-color: white;
+}
+
+.upload-container h1 {
+    margin-bottom: 40px;
+    font-size: 35px;
+    text-align: center;
+    /* color: #333; */
+}
+
+.upload form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    /* margin-bottom: 5px; */
+    font-weight: bold;
+    /* display: block; */
+    /* color: #333; */
+}
+
+.upload-container input, select {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.upload-container input[type="submit"] {
+    background-color: #ccc;
+    color: black;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.upload-container input[type="submit"]:hover {
+    border: 2px solid #ccc;
+    background-color: #fff;
+}
+
+.file {
+	opacity: 0;
+	width: 0.1px;
+	height: 0.1px;
+    /* width: 100%; */
+	position: absolute;
+}
+
+#file-input {
+	border: 2px grey solid;
+	border-radius: 40px;
+	width: 100%;
+	text-align: center;
+	padding: 8px;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-bottom: 10px;
+    display: block;
+}
+
+/* TABLE */
+.main-content .audio-container {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    padding: 15px;
+    border: 3px solid #ccc;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-bottom: 2px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    /* border-right: 1px solid black; */
+
+}
+
+tr th:first-child, tr td:first-child {
+    width: 55%;
+}

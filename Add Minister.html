@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="styles.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
     <link href="queries.css" rel="stylesheet">
-    <title>Ministers</title>
+    <title>Add Minister</title>
 </head>
 <body>
-    <main class="container">
+    <div class="container">
         <header class="topbar" id="topbar">
             <div class="top-content grid" id="top-content">
                 <div class="left-content flex">
@@ -72,37 +74,37 @@
         <nav class="navbar hide" id="navbar">
             <ul class="navlist grid">
                 <li class="navitem" >
-                    <a href="index.html">
+                    <a href="All Messages-Admin.html">
                         <span class="material-symbols-outlined">home</span>
-                        <p>Home</p>
+                        <br>All <br>Messages</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="All Messages.html">
+                    <a href="Upload Messages-Admin.html">
                         <span class="material-symbols-outlined">mail</span>
-                        <p>All <br>Messages</p>
+                        <p>Upload <br>Messages</p>
                     </a>
                 </li>
                 <li class="navitem active">
-                    <a href="Ministers.html">
+                    <a href="Add Minister.html">
                         <span class="material-symbols-outlined">boy</span>
-                        <p>Ministers</p>
+                        <p>Add <br>Ministers</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="Meetings.html">
+                    <a href="Add Meetings.html">
                         <span class="material-symbols-outlined">meeting_room</span>
-                        <p>Meetings</p>
+                        <p>Add <br>Meetings</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="Worship.html">
+                    <a href="#">
                         <span class="material-symbols-outlined">library_music</span>
                         <p>Worship</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="Songs.html">
+                    <a href="#">
                         <span class="material-symbols-outlined">genres</span>
                         <p>Songs <br>Birthed By <br>TSGC</p>
                     </a>
@@ -118,44 +120,43 @@
             </div> -->
             <ul class="grid">
                 <li class="navitem" >
-                    <a href="index.html" class="flex">
+                    <a href="All Messages-Admin.html" class="flex">
                         <span class="material-symbols-outlined">home</span>
-                        <p>Home</p>
-                    </a>
-                </li>
-                <li class="navitem">
-                    <a href="All Messages.html" class="flex">
-                        <span class="material-symbols-outlined">mail</span>
                         <p>All Messages</p>
                     </a>
                 </li>
+                <li class="navitem">
+                    <a href="Upload Messages-Admin.html" class="flex">
+                        <span class="material-symbols-outlined">mail</span>
+                        <p>Upload Messages</p>
+                    </a>
+                </li>
                 <li class="navitem active">
-                    <a href="Ministers.html" class="flex">
+                    <a href="Add Minister.html" class="flex">
                         <span class="material-symbols-outlined">boy</span>
-                        <p>Ministers</p>
+                        <p>Add Ministers</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="Meetings.html" class="flex">
+                    <a href="Add Meetings.html" class="flex">
                         <span class="material-symbols-outlined">meeting_room</span>
-                        <p>Meetings</p>
+                        <p>Add Meetings</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="Worship.html" class="flex">
+                    <a href="#" class="flex">
                         <span class="material-symbols-outlined">library_music</span>
                         <p>Worship</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="Songs.html" class="flex">
+                    <a href="#" class="flex">
                         <span class="material-symbols-outlined">genres</span>
                         <p>Songs Birthed <br>By TSGC</p>
                     </a>
                 </li>
             </ul>
-
-            <section class="events-container">
+            <!-- <section class="events-container">
                 <h1>Upcoming Events</h1>
                 <div class="events">
                     <div class="event fade">
@@ -171,121 +172,22 @@
                         <img src="images/images.jpeg" alt="Upcoming Event">
                     </div>
                 </div>
-            </section>
+            </section> -->
         </nav>
 
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- <section class="minister-content scroll-container"> -->
-                <!-- <header class="flex">
-                    <h2>Artist</h2>
-                    <div class="arrows flex">
-                        <span class="material-symbols-outlined arrow-left">keyboard_arrow_left</span>
-                        <span class="material-symbols-outlined arrow-right">keyboard_arrow_right</span>
-                    </div>
-                </header> -->
-            <div class="ministers flex" id="minister-content">
-                <div class="minister grid">
-                    <a href="#" class="ministry" data-minister="Anendlessocean" data-ministerImg="images/Anendlessocean-1.webp">
-                        <img src="images/Anendlessocean-1.webp" alt="Artist Image" id="artist-image">
-                        <span class="overlay-minister">Anendlessocean</span>
-                    </a>
-                </div>
-                <div class="minister grid">
-                    <a href="#" class="ministry" data-minister="Anendlessocean" data-ministerImg="images/Anendlessocean-1.webp">
-                        <img src="images/Anendlessocean-1.webp" alt="Artist Image" id="artist-image" data-ministerImg="images/Anendlessocean-1.webp">
-                        <span class="overlay-minister" data-minister="Anendlessocean">Anendlessocean</span>
-                    </a>
-                </div>
-                <div class="minister grid">
-                    <a href="#" class="ministry" data-minister="Anendlessocean" data-ministerImg="images/Anendlessocean-1.webp">
-                        <img src="images/Anendlessocean-1.webp" alt="Artist Image" id="artist-image">
-                        <span class="overlay-minister">Anendlessocean</span>
-                    </a>
-                </div>
-                <div class="minister grid">
-                    <a href="#" class="ministry" data-minister="Anendlessocean" data-ministerImg="images/Anendlessocean-1.webp">
-                        <img src="images/Anendlessocean-1.webp" alt="Artist Image" id="artist-image">
-                        <span class="overlay-minister">Anendlessocean</span>
-                    </a>
-                </div>
-                <div class="minister grid">
-                    <a href="#" class="ministry" data-minister="Anendlessocean" data-ministerImg="images/Anendlessocean-1.webp">
-                        <img src="images/Anendlessocean-1.webp" alt="Artist Image" id="artist-image">
-                        <span class="overlay-minister">Anendlessocean</span>
-                    </a>
-                </div>
-                <div class="minister grid">
-                    <a href="#" class="ministry" data-minister="Anendlessocean" data-ministerImg="images/Anendlessocean-1.webp">
-                        <img src="images/Anendlessocean-1.webp" alt="Artist Image" id="artist-image">
-                        <span class="overlay-minister">Anendlessocean</span>
-                    </a>
-                </div>
-                <div class="minister grid">
-                    <a href="#" class="ministry" data-minister="Anendlessocean" data-ministerImg="images/Anendlessocean-1.webp">
-                        <img src="images/Anendlessocean-1.webp" alt="Artist Image" id="artist-image">
-                        <span class="overlay-minister">Anendlessocean</span>
-                    </a>
-                </div>
-            </div>
-            <!-- </section> -->
-        </main>
-
+        <!-- AUDIO UPLOAD FORM -->
+        <div class="main-content">
+            <div class="upload-container">
+                <h1>Add Minister</h1>
+                <form action="#">
+                    <label for="minister-name">Minister Name</label>
+                    <input type="text" id="minister-name" name="minister-name" placeholder="Enter name of minister" required>
         
-
-    </main>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let slideIndex = 0;
-            showSlides();
-
-            function showSlides() {
-                let i;
-                let slides = document.getElementsByClassName('event');
-
-                // Hide all slides
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";  
-                }
-
-                // Increment slideIndex and reset if it exceeds the number of slides
-                slideIndex++;
-                if (slideIndex > slides.length) {
-                    slideIndex = 1;
-                }
-
-                // Display the current slide
-                slides[slideIndex - 1].style.display = "block";
-
-                // Call showSlides function recursively after 3 seconds (3000 milliseconds)
-                setTimeout(showSlides, 3000); // Change image every 3 seconds
-            }
-
-            document.querySelectorAll('.ministry').forEach(minister => {
-                minister.addEventListener('click', event => {
-                    event.preventDefault(); // Prevent default link behavior
-
-                    // Get minister details from data attributes using event.currentTarget
-                    const ministerName = event.currentTarget.getAttribute('data-minister');
-                    const ministerImage = event.currentTarget.getAttribute('data-ministerImg');
-
-                    // Check if values are correctly retrieved
-                    console.log(ministerName, ministerImage);
-
-                    // Store song details in localStorage
-                    localStorage.setItem('minister', JSON.stringify({ ministerName, ministerImage }));
-
-                    // Redirect to the new page
-                    window.location.href = 'Minister.html'; // Change this to your target page
-                });
-            });
-
-
-        });
-    </script>
-    <script src="script.js" type="module"></script> 
+                    <!-- category -->
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

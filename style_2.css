@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: end; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    background: url(images/33568.jpg) center top no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.center-div {
+    width: 670px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 20px;
+    margin-right: 70px;
+    background-color: white;
+}
+
+.upload-container {
+    width: 670px;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 20px;
+    /* margin-right: 70px; */
+    background-color: white;
+}
+
+.center-div h1 {
+    margin-bottom: 40px;
+    font-size: 35px;
+    text-align: center;
+    /* color: #333; */
+}
+
+.center-div form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.center-div .formgroups {
+    width: 100%;
+    display: grid;
+    /* justify-content: center; */
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+.center-div .formgroup {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    /* margin-bottom: 5px; */
+    font-weight: bold;
+    /* display: block; */
+    /* color: #333; */
+}
+
+.center-div input {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.center-div input[type="submit"] {
+    background-color: #92E2DF;
+    color: black;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.center-div input[type="submit"]:hover {
+    border: 2px solid #92E2DF;
+    background-color: #fff;
+}
+
+.links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.links a {
+    font-size: 14px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+#email-group, #phone-group{
+    width: 100%;
+}
+
+#phone-group {
+    display: none;
+}
+
+.file {
+	opacity: 0;
+	width: 0.1px;
+	height: 0.1px;
+	position: absolute;
+}
+
+#file-input {
+	border: 2px grey dashed;
+	border-radius: 40px;
+	width: 100%;
+	text-align: center;
+	padding: 8px;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+#toggle-input {
+    font-size: 16px;
+    margin-top: -15px;
+}
+
+#toggle-input:hover {
+    text-decoration: underline;
+}
+
+.space {
+    margin-top: 20px;
+}
