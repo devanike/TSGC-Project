@@ -91,7 +91,7 @@ navMenu.addEventListener("click", () => DisplayDiv(mobileSideNav))
 navMenu.addEventListener("click", () => DisplayDiv(desktopSideNav))
 
 
-// SCROLLING ---NOT WORKING YET
+// SCROLLING
 const scrollAmount = 400;
 const scrollContainer = document.getElementById('content');
 const scrollArtist = document.getElementById('artist-content');

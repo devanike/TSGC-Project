@@ -8,22 +8,21 @@ document.querySelectorAll('input[type="file"]').forEach(file => {
     });
 });
 
-// toggle between email and phone number inputs
-// const toggleInput = document.getElementById('toggle-input');
-// const emailGroup = document.getElementById('email-group');
-// const phoneGroup = document.getElementById('phone-group');
+const mobileSearchBar = document.getElementById("mobile-search")
+const closeSearchBar = document.getElementById("close-search")
+const searchIcon = document.getElementById("search-icon")
 
-// toggleInput.addEventListener('click', function(e) {
-//     e.preventDefault();
+// opens and closes the mobile Search Bar when the search icon is clicked
+searchIcon.addEventListener("click", () => DisplayDiv(mobileSearchBar))
+closeSearchBar.addEventListener("click", () => DisplayDiv(mobileSearchBar))
 
-//     if (toggleInput.textContent === 'Use Phone Number Instead') {
-//         toggleInput.textContent = 'Use Email Instead';
-//         emailGroup.style.display = 'none';
-//         phoneGroup.style.display = 'block';
-//     } else {
-//         toggleInput.textContent = 'Use Phone Number Instead';
-//         emailGroup.style.display = 'block';
-//         phoneGroup.style.display = 'none';
-//     }
-// })
+function DisplayDiv(div) {
+    if (div.classList.contains("hide")) {
+        div.classList.remove('hide');
+        div.classList.add('show');
+    } else {
+        div.classList.remove('show');
+        div.classList.add('hide');
+    }
+}
 
