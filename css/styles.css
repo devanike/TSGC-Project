@@ -14,7 +14,7 @@ body {
     width: 100%;
     font-family: "Roboto", sans-serif;
     background-color: var(--bgcolor);
-    overflow: hidden;
+    /* overflow: hidden; */
     /* height: 100vh; */
 }
 

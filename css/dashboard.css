@@ -4,18 +4,6 @@
     box-sizing: border-box;
 }
 
-/* body {
-    height: 100vh;
-    width: 100vw;
-    font-family: "Roboto", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(images/33568.jpg) center top no-repeat;
-    background-size: cover;
-    overflow: hidden;
-} */
-
 a {
     text-decoration: none;
     color: black;
@@ -25,23 +13,27 @@ a {
     width: 670px;
     border-radius: 20px;
     font-size: 20px;
-    padding: 20px;
+    padding: 0 20px;
     margin: 0 auto;
     /* margin-right: 70px; */
     background-color: white;
 }
 
 .upload-container h1 {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-size: 35px;
     text-align: center;
     /* color: #333; */
 }
 
-.upload form {
+.upload-container form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    /* overflow-x: hidden; */
 }
 
 label {
@@ -52,8 +44,8 @@ label {
 }
 
 .upload-container input, select {
-    margin-bottom: 20px;
-    padding: 10px;
+    margin-bottom: 15px;
+    padding: 6px;
     font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -78,8 +70,9 @@ label {
 	opacity: 0;
 	width: 0.1px;
 	height: 0.1px;
-    /* width: 100%; */
 	position: absolute;
+    display: none;
+    /* margin-top: -60px; */
 }
 
 #file-input {
@@ -92,6 +85,10 @@ label {
 	margin-top: 10px;
 	margin-bottom: 10px;
     display: block;
+}
+
+input#audio-file.file, input#image-file.file {
+    /* width: 30px; */
 }
 
 /* TABLE */

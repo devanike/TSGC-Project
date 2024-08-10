@@ -241,6 +241,18 @@
         width: 120px;
     }
 
+    /* ALL MESSAGES - ADMIN */
+    .container .main-content .audio-container table{
+        margin-right: 5px;
+    }
+
+    /* UPLOAD MESSAGES */
+    .upload-container {
+        width: 100vw;
+    }
+
+
+
 }
 
 @media screen and (min-width: 481px) and (max-width: 767px) {
@@ -264,6 +276,17 @@
     .container .main-content .ministers,
     .container .main-content .meetings {
         justify-content: center;
+    }
+
+     /* UPLOAD MESSAGES */
+    .upload-container {
+        width: 100vw;
+        padding-left: 0;
+        /* margin-right: 20px; */
+    }
+
+    .upload-container form {
+        margin-right: 15px;
     }
 }
 

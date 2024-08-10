@@ -9,9 +9,9 @@ body {
     width: 100vw;
     font-family: "Roboto", sans-serif;
     display: flex;
-    justify-content: end; /* Center horizontally */
-    align-items: center;    /* Center vertically */
-    background: url(images/33568.jpg) center top no-repeat;
+    justify-content: end; 
+    align-items: center;    
+    background: url(/images/33568.jpg) center top no-repeat;
     background-size: cover;
 }
 
@@ -145,4 +145,23 @@ label {
 
 .space {
     margin-top: 20px;
+}
+
+/* MOBILE */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    body {
+        background: url(/images/33568\ \(2\).jpg) -290px center no-repeat;
+        background-size: cover;
+        justify-content: center;
+        
+    }
+
+    .center-div {
+        margin-right: 0;
+        width: 80%;
+    }
+
+    .center-div .formgroups {
+        grid-template-columns: auto;
+    }
 }
