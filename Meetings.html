@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
+    <script src="https://kit.fontawesome.com/3ed11200e3.js" crossorigin="anonymous"></script>
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/queries.css" rel="stylesheet">
     <title>Meetings</title>
@@ -15,15 +16,15 @@
         <header class="topbar" id="topbar">
             <div class="top-content grid" id="top-content">
                 <div class="left-content flex">
-                    <span class="material-symbols-outlined" id="menu">menu</span>
+                    <i class="fa-solid fa-bars fa-lg" id="menu"></i>
                     <img src="images/YT_Music.svg.png" class="logo" alt="Logo">
                 </div>
                 <div class="center-content flex" id="center-content">
-                    <span class="material-symbols-outlined hide" id="search-icon">search</span>
+                    <i class="fa-solid fa-search hide" id="search-icon"></i>
                     <div class="search flex" id="search">
-                        <span class="material-symbols-outlined">search</span>
+                        <i class="fa-solid fa-search fa-lg"></i>
                         <input type="search" class="hidden" id="search-input" name="search-input" placeholder="Search messages, songs ...">
-                        <span class="material-symbols-outlined" id="clear">close</span>
+                        <i class="fa-solid fa-times fa-lg" id="clear"></i>
                     </div>
                 </div>
                 <div class="right-content flex">
@@ -34,25 +35,25 @@
                             <ul class="grid">
                                 <li>
                                     <a href="#" class="flex">
-                                        <span class="material-symbols-outlined">person</span>
+                                        <i class="fa-solid fa-user fa-lg"></i>
                                         <p>My Profile</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="flex">
-                                        <span class="material-symbols-outlined">key</span>
+                                        <i class="fa-solid fa-lg fa-key"></i>
                                         <p>Change Password</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="flex">
-                                        <span class="material-symbols-outlined">subscriptions</span>
+                                        <i class="fa-solid fa-lg fa-list"></i>
                                         <p>Subscription Plan</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="flex">
-                                        <span class="material-symbols-outlined">logout</span>
+                                        <i class="fa-solid fa-lg fa-sign-out"></i>
                                         <p>Sign Out</p>
                                     </a>
                                 </li>
@@ -63,9 +64,9 @@
             </div>
         </header>
         <div class="mobile-search flex hide" id="mobile-search">
-            <span class="material-symbols-outlined" id="close-search">arrow_back</span>
+            <i class="fa-solid fa-arrow-left fa-lg" id="close-search"></i>
             <input type="search" class="hidden" id="mobile-search-input" name="search-input" placeholder="Search messages, songs ...">
-            <span class="material-symbols-outlined mobile-clear" id="mobile-clear">close</span>
+            <i class="fa-solid fa-times fa-lg mobile-clear" id="mobile-clear"></i>
         </div>
 
         <!-- NAV MENU -->
@@ -73,37 +74,37 @@
             <ul class="navlist grid">
                 <li class="navitem" >
                     <a href="index.html">
-                        <span class="material-symbols-outlined">home</span>
+                        <i class="fa-solid fa-home fa-lg"></i>
                         <p>Home</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="All Messages.html">
-                        <span class="material-symbols-outlined">mail</span>
+                        <i class="fa-solid fa-message fa-lg"></i>
                         <p>All <br>Messages</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Ministers.html">
-                        <span class="material-symbols-outlined">boy</span>
+                        <i class="fa-solid fa-person fa-lg"></i>
                         <p>Ministers</p>
                     </a>
                 </li>
                 <li class="navitem active">
                     <a href="Meetings.html">
-                        <span class="material-symbols-outlined">meeting_room</span>
+                        <i class="fa-solid fa-comment fa-lg"></i>
                         <p>Meetings</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Worship.html">
-                        <span class="material-symbols-outlined">library_music</span>
+                        <i class="fa-solid fa-music fa-lg"></i>
                         <p>Worship</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Songs.html">
-                        <span class="material-symbols-outlined">genres</span>
+                        <i class="fa-solid fa-guitar fa-lg"></i>
                         <p>Songs <br>Birthed By <br>TSGC</p>
                     </a>
                 </li>
@@ -119,37 +120,37 @@
             <ul class="grid">
                 <li class="navitem" >
                     <a href="index.html" class="flex">
-                        <span class="material-symbols-outlined">home</span>
+                        <i class="fa-solid fa-home fa-lg"></i>
                         <p>Home</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="All Messages.html" class="flex">
-                        <span class="material-symbols-outlined">mail</span>
+                        <i class="fa-solid fa-message fa-lg"></i>
                         <p>All Messages</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Ministers.html" class="flex">
-                        <span class="material-symbols-outlined">boy</span>
+                        <i class="fa-solid fa-person fa-lg"></i>
                         <p>Ministers</p>
                     </a>
                 </li>
                 <li class="navitem active">
                     <a href="Meetings.html" class="flex">
-                        <span class="material-symbols-outlined">meeting_room</span>
+                        <i class="fa-solid fa-comment fa-lg"></i>
                         <p>Meetings</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Worship.html" class="flex">
-                        <span class="material-symbols-outlined">library_music</span>
+                        <i class="fa-solid fa-music fa-lg"></i>
                         <p>Worship</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Songs.html" class="flex">
-                        <span class="material-symbols-outlined">genres</span>
+                        <i class="fa-solid fa-guitar fa-lg"></i>
                         <p>Songs Birthed <br>By TSGC</p>
                     </a>
                 </li>
@@ -176,9 +177,7 @@
 
         <!-- MAIN CONTENT -->
         <section class="main-content">
-            <!-- <img src="images/AEO.png" alt=""> -->
             <section class="events-container">
-                <!-- <h1>Upcoming Events</h1> -->
                 <div class="events" id="events2">
                     <div class="event fade">
                         <img src="images/events-colorful-typography-banner-260nw-1356206768.webp" alt="Upcoming Event">
@@ -253,36 +252,6 @@
             </div>
         </section>
 
-        <div class="audio-controls-bar grid hide-player" id="audio-controls-bar">
-            <div class="progress-container">
-                <input id="progress-bar" type="range" value="0" min="0" max="100" step="0.1">
-            </div>
-            <div class="controls flex">
-                <div class="control-left">
-                    <span id="duration-count" class="duration-count">0:00/<span class="duration"></span></span>
-                </div>
-                <div class="control-center grid">
-                    <div class="song-info">
-                        <span id="current-title"></span> - <span id="current-artist"></span>
-                    </div>
-                    <div class="bar-icons flex">
-                        <span id="backward-button" class="material-symbols-outlined control-button">skip_previous</span>
-                        <span id="play-pause-button" class="material-symbols-outlined control-button">play_arrow</span>
-                        <span id="forward-button" class="material-symbols-outlined control-button">skip_next</span>
-                    </div>
-                </div>
-                <div class="control-right flex">
-                    <span id="volume-button" class="material-symbols-outlined control-button">volume_up</span>
-                    <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1">
-                    <span id="shuffle-button" class="material-symbols-outlined control-button">shuffle</span>
-                    <span id="repeat-button" class="material-symbols-outlined control-button">repeat</span>
-                </div>
-            </div>
-            <audio id="bottom-audio">
-                <!-- <source src="Anendlessocean - Gratitude.mp3" type="audio/mpeg"> -->
-                Your browser does not support the audio element.
-            </audio>
-        </div>
 
     </main>
 
@@ -343,6 +312,6 @@
         });
     </script>
     <script src="Js/script.js" type="module"></script> 
-    <script src="Js/Audio Player Bar.js" type="module"></script> 
+    <!-- <script src="Js/Audio Player Bar.js" type="module"></script>  -->
 </body>
 </html>

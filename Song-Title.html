@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://kit.fontawesome.com/3ed11200e3.js" crossorigin="anonymous"></script>
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/queries.css" rel="stylesheet">
     <title>Title</title>
@@ -16,15 +16,15 @@
         <header class="topbar" id="topbar">
             <div class="top-content grid" id="top-content">
                 <div class="left-content flex">
-                    <span class="material-symbols-outlined" id="menu">menu</span>
+                    <i class="fa-solid fa-bars fa-lg" id="menu"></i>
                     <img src="images/YT_Music.svg.png" class="logo" alt="Logo">
                 </div>
                 <div class="center-content flex" id="center-content">
-                    <span class="material-symbols-outlined hide" id="search-icon">search</span>
+                    <i class="fa-solid fa-search hide" id="search-icon"></i>
                     <div class="search flex" id="search">
-                        <span class="material-symbols-outlined">search</span>
+                        <i class="fa-solid fa-search fa-lg"></i>
                         <input type="search" class="hidden" id="search-input" name="search-input" placeholder="Search messages, songs ...">
-                        <span class="material-symbols-outlined" id="clear">close</span>
+                        <i class="fa-solid fa-times fa-lg" id="clear"></i>
                     </div>
                 </div>
                 <div class="right-content flex">
@@ -35,25 +35,25 @@
                             <ul class="grid">
                                 <li>
                                     <a href="#" class="flex">
-                                        <span class="material-symbols-outlined">person</span>
+                                        <i class="fa-solid fa-user fa-lg"></i>
                                         <p>My Profile</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="flex">
-                                        <span class="material-symbols-outlined">key</span>
+                                        <i class="fa-solid fa-lg fa-key"></i>
                                         <p>Change Password</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="flex">
-                                        <span class="material-symbols-outlined">subscriptions</span>
+                                        <i class="fa-solid fa-lg fa-list"></i>
                                         <p>Subscription Plan</p>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" class="flex">
-                                        <span class="material-symbols-outlined">logout</span>
+                                        <i class="fa-solid fa-lg fa-sign-out"></i>
                                         <p>Sign Out</p>
                                     </a>
                                 </li>
@@ -64,9 +64,9 @@
             </div>
         </header>
         <div class="mobile-search flex hide" id="mobile-search">
-            <span class="material-symbols-outlined" id="close-search">arrow_back</span>
+            <i class="fa-solid fa-arrow-left fa-lg" id="close-search"></i>
             <input type="search" class="hidden" id="mobile-search-input" name="search-input" placeholder="Search messages, songs ...">
-            <span class="material-symbols-outlined mobile-clear" id="mobile-clear">close</span>
+            <i class="fa-solid fa-times fa-lg mobile-clear" id="mobile-clear"></i>
         </div>
 
         <!-- NAV MENU -->
@@ -74,37 +74,37 @@
             <ul class="navlist grid">
                 <li class="navitem" >
                     <a href="index.html">
-                        <span class="material-symbols-outlined">home</span>
+                        <i class="fa-solid fa-home fa-lg"></i>
                         <p>Home</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="All Messages.html">
-                        <span class="material-symbols-outlined">mail</span>
+                        <i class="fa-solid fa-message fa-lg"></i>
                         <p>All <br>Messages</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Ministers.html">
-                        <span class="material-symbols-outlined">boy</span>
+                        <i class="fa-solid fa-person fa-lg"></i>
                         <p>Ministers</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Meetings.html">
-                        <span class="material-symbols-outlined">meeting_room</span>
+                        <i class="fa-solid fa-comment fa-lg"></i>
                         <p>Meetings</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Worship.html">
-                        <span class="material-symbols-outlined">library_music</span>
+                        <i class="fa-solid fa-music fa-lg"></i>
                         <p>Worship</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Songs.html">
-                        <span class="material-symbols-outlined">genres</span>
+                        <i class="fa-solid fa-guitar fa-lg"></i>
                         <p>Songs <br>Birthed By <br>TSGC</p>
                     </a>
                 </li>
@@ -113,44 +113,40 @@
 
         <!-- DESKTOP NAV MENU -->
         <nav class="desktop-nav hide" id="desktop-nav">
-            <!-- <div class="top flex">
-                <span class="material-symbols-outlined" id="close">close</span>
-                <img src="YT_Music.svg.png" class="logo" alt="Logo">
-            </div> -->
             <ul class="grid">
                 <li class="navitem" >
                     <a href="index.html" class="flex">
-                        <span class="material-symbols-outlined">home</span>
+                        <i class="fa-solid fa-home fa-lg"></i>
                         <p>Home</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="All Messages.html" class="flex">
-                        <span class="material-symbols-outlined">mail</span>
+                        <i class="fa-solid fa-message fa-lg"></i>
                         <p>All Messages</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Ministers.html" class="flex">
-                        <span class="material-symbols-outlined">boy</span>
+                        <i class="fa-solid fa-person fa-lg"></i>
                         <p>Ministers</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Meetings.html" class="flex">
-                        <span class="material-symbols-outlined">meeting_room</span>
+                        <i class="fa-solid fa-comment fa-lg"></i>
                         <p>Meetings</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Worship.html" class="flex">
-                        <span class="material-symbols-outlined">library_music</span>
+                        <i class="fa-solid fa-music fa-lg"></i>
                         <p>Worship</p>
                     </a>
                 </li>
                 <li class="navitem">
                     <a href="Songs.html" class="flex">
-                        <span class="material-symbols-outlined">genres</span>
+                        <i class="fa-solid fa-guitar fa-lg"></i>
                         <p>Songs Birthed <br>By TSGC</p>
                     </a>
                 </li>
@@ -185,8 +181,8 @@
                     <input type="button" value="Download">
                 </div>
                 <div class="thumb-icon flex">
-                    <span class="material-symbols-outlined thumbs">thumb_up</span>
-                    <span class="material-symbols-outlined thumbs">thumb_down</span>
+                    <i class="fa-regular fa-thumbs-up fa-lg thumbs"></i>
+                    <i class="fa-regular fa-thumbs-down fa-lg thumbs"></i>
                 </div>
             </div>
             <div id="audio-player-container">
@@ -212,16 +208,16 @@
                         <span id="current-title"></span> - <span id="current-artist"></span>
                     </div>
                     <div class="bar-icons flex">
-                        <span id="backward-button" class="material-symbols-outlined control-button">skip_previous</span>
-                        <span id="play-pause-button" class="material-symbols-outlined control-button">play_arrow</span>
-                        <span id="forward-button" class="material-symbols-outlined control-button">skip_next</span>
+                        <i id="backward-button" class="fa-solid fa-lg fa-backward control-button"></i>
+                        <i id="play-pause-button" class="fa-solid fa-lg fa-play control-button"></i>
+                        <i id="forward-button" class="fa-solid fa-lg fa-forward control-button"></i>
                     </div>
                 </div>
                 <div class="control-right flex">
-                    <span id="volume-button" class="material-symbols-outlined control-button">volume_up</span>
+                    <i id="volume-button" class="fa-solid fa-lg fa-volume-high control-button"></i>
                     <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1">
-                    <span id="shuffle-button" class="material-symbols-outlined control-button">shuffle</span>
-                    <span id="repeat-button" class="material-symbols-outlined control-button">repeat</span>
+                    <i id="shuffle-button" class="fa-solid fa-lg fa-shuffle control-button"></i>
+                    <i id="repeat-button" class="fa-solid fa-lg fa-repeat control-button"></i>
                 </div>
             </div>
             <audio id="bottom-audio">
@@ -290,27 +286,17 @@
             const updateVolumeIcon = () => {
                 const volume = audioPlayer.volume;
                 if (volume === 0) {
-                    volumeButton.textContent = 'volume_off'; // Volume off
+                    volumeButton.classList.remove("fa-volume-low");
+                    volumeButton.classList.remove("fa-volume-high");
+                    volumeButton.classList.add("fa-volume-xmark"); // Volume off
                 } else if (volume <= 0.5) {
-                    volumeButton.textContent = 'volume_down'; // Low volume
+                    volumeButton.classList.remove("fa-volume-high"); 
+                    volumeButton.classList.remove("fa-volume-xmark"); 
+                    volumeButton.classList.add("fa-volume-low"); // Low volume
                 } else {
-                    volumeButton.textContent = 'volume_up'; // High volume
-                }
-            };
-
-            const toggleRepeat = () => {
-                switch (repeatButton.dataset.repeat) {
-                    case 'off':
-                        repeatButton.dataset.repeat = 'one';
-                        repeatButton.textContent = 'repeat_one'; // Change icon to repeat one
-                        break;
-                    case 'one':
-                        repeatButton.dataset.repeat = 'off';
-                        repeatButton.textContent = 'repeat'; // Change icon to repeat off
-                        break;
-                    default:
-                        repeatButton.dataset.repeat = 'one';
-                        repeatButton.textContent = 'repeat_one'; // Default to repeat one
+                    volumeButton.classList.remove("fa-volume-xmark"); 
+                    volumeButton.classList.remove("fa-volume-low"); 
+                    volumeButton.classList.add("fa-volume-high"); // High volume
                 }
             };
 
@@ -326,7 +312,8 @@
 
                 // Set the initial state of the play/pause button
                 const playPauseButton = document.getElementById('play-pause-button');
-                playPauseButton.textContent = 'pause'; // Set initial state to pause
+                playPauseButton.classList.remove("fa-play")
+                playPauseButton.classList.add("fa-pause")
 
                 currentTitle.textContent = currentSong.song_title
                 currentArtist.textContent = currentSong.artist
@@ -340,21 +327,28 @@
                 // Start playing the song if it was playing before refresh
                 if (localStorage.getItem('audioPlayerPlaying') === 'true') {
                     audioPlayer.play(); // Start playing the song
-                    playPauseButton.textContent = 'pause'; // Change icon to pause
+                    playPauseButton.classList.remove("fa-play")
+                    playPauseButton.classList.add("fa-pause")
+                    
                 }else {
-                    playPauseButton.textContent = 'play_arrow'; // Change icon to play
+                    playPauseButton.classList.remove("fa-pause")
+                    playPauseButton.classList.add("fa-play")
+                    
                 }
 
-                playPauseButton.textContent = 'play_arrow';
+                playPauseButton.classList.remove("fa-pause")
+                playPauseButton.classList.add("fa-play")
 
                 playPauseButton.addEventListener('click', () => {
                     if (audioPlayer.paused) {
                         audioPlayer.play(); // Play the audio
-                        playPauseButton.textContent = 'pause'; // Change icon to pause
+                        playPauseButton.classList.remove("fa-play")
+                        playPauseButton.classList.add("fa-pause")
                         localStorage.setItem('audioPlayerPlaying', 'true');
                     } else {
                         audioPlayer.pause(); // Pause the audio
-                        playPauseButton.textContent = 'play_arrow'; // Change icon to play
+                        playPauseButton.classList.remove("fa-pause")
+                        playPauseButton.classList.add("fa-play")
                         localStorage.setItem('audioPlayerPlaying', 'false');
                     }
                 });
@@ -362,7 +356,8 @@
                 backwardButton.addEventListener('click', () => {
                     audioPlayer.currentTime = 0; // Set the current playback time to 0
                     audioPlayer.play(); // Start playing the audio
-                    playPauseButton.textContent = 'pause'; // Change icon to pause
+                    playPauseButton.classList.remove("fa-play")
+                    playPauseButton.classList.add("fa-pause")
                     localStorage.setItem('audioPlayerPlaying', 'true');
                 });
 
@@ -372,7 +367,8 @@
                         audioPlayer.currentTime = 0; // Restart the song
                         audioPlayer.play(); // Play the song again
                     } else {
-                        playPauseButton.textContent = 'play_arrow'; // Change icon to play
+                        playPauseButton.classList.remove("fa-pause")
+                        playPauseButton.classList.add("fa-play")
                         localStorage.setItem('audioPlayerPlaying', 'false');
                     }
                 });
@@ -410,16 +406,20 @@
                     if (audioPlayer.volume > 0) {
                         audioPlayer.volume = 0; // Mute the audio
                         volumeSlider.value = 0; // Update volume slider
-                        volumeButton.textContent = 'volume_off'; // Change icon to volume off
+                        volumeButton.classList.remove("fa-volume-low");
+                        volumeButton.classList.remove("fa-volume-high");
+                        volumeButton.classList.add("fa-volume-xmark");
                     } else {
                         audioPlayer.volume = 1; // Restore the audio volume
                         volumeSlider.value = 1; // Update volume slider
-                        volumeButton.textContent = 'volume_up'; // Change icon to volume up
+                        volumeButton.classList.remove("fa-volume-xmark"); 
+                        volumeButton.classList.remove("fa-volume-low"); 
+                        volumeButton.classList.add("fa-volume-high");
                     }
                 });
 
                 // repeat button click
-                repeatButton.addEventListener('click', toggleRepeat);
+                // repeatButton.addEventListener('click', toggleRepeat);
             }
 
         });

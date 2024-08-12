@@ -73,22 +73,23 @@ musicDivs.forEach((musicDiv, index)  => {
 
     // Sync the play/pause state with the audio player controls
     audioPlayer.addEventListener('play', () => {
-        playIcon.textContent = 'pause';
+        playIcon.classList.remove("fa-play")
+        playIcon.classList.add("fa-pause")
         startProgressUpdateInterval(audioPlayer);
         highlightCurrentMusicDiv(musicDiv);
     });
 
     audioPlayer.addEventListener('pause', () => {
-        playIcon.textContent = 'play_arrow';
+        playIcon.classList.add("fa-play")
+        playIcon.classList.remove("fa-pause")
         clearInterval(progressUpdateInterval);
-        // removeHighlightFromMusicDiv(musicDiv);
     });
 
     audioPlayer.addEventListener('ended', () => {
-        playIcon.textContent = 'play_arrow';
+        playIcon.classList.add("fa-play")
+        playIcon.classList.remove("fa-pause")
         clearInterval(progressUpdateInterval);
         removeHighlightFromMusicDiv(musicDiv);
-        // playNext(); // Automatically play the next song
         if (isRepeating && audioPlayer === currentAudio) {
             audioPlayer.currentTime = 0;
             audioPlayer.play();
@@ -105,16 +106,28 @@ musicDivs.forEach((musicDiv, index)  => {
 playAudioBar.addEventListener('click', () => {
     if (currentAudio) {
         if (currentAudio.paused) {
-            currentAudio.play();
-            playAudioBar.textContent = 'pause';
-            if (currentPlayIcon) currentPlayIcon.textContent = 'pause';
+            currentAudio.play()
+            playAudioBar.classList.remove("fa-play")
+            playAudioBar.classList.add("fa-pause")
+            // playAudioBar.textContent = 'pause';
+            // if (currentPlayIcon) currentPlayIcon.textContent = 'pause';
+            if (currentPlayIcon) {
+                currentPlayIcon.classList.remove("fa-play");
+                currentPlayIcon.classList.add("fa-pause");
+            }
             startProgressUpdateInterval(currentAudio);
             // shows the audio controls bar
             audioControlsBar.classList.remove('hide-player');
         } else {
             currentAudio.pause();
-            playAudioBar.textContent = 'play_arrow';
-            if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
+            // playAudioBar.textContent = 'play_arrow';
+            playAudioBar.classList.remove("fa-pause")
+            playAudioBar.classList.add("fa-play")
+            // if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
+            if (currentPlayIcon) {
+                currentPlayIcon.classList.remove("fa-pause");
+                currentPlayIcon.classList.add("fa-play");
+            }
             clearInterval(progressUpdateInterval);
             // Show the audio controls bar
             // audioControlsBar.classList.add('hide');
@@ -152,15 +165,25 @@ function handlePlayPause(audioPlayer, playIcon, index) {
     if (currentAudio && currentAudio !== audioPlayer) {
         currentAudio.pause();
         currentAudio.currentTime = 0; // Restart the previously playing song
-        if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
-        playAudioBar.textContent = 'play_arrow';
+        // if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
+        if (currentPlayIcon) {
+            currentPlayIcon.classList.remove("fa-pause");
+            currentPlayIcon.classList.add("fa-play");
+        }
+        // playAudioBar.textContent = 'play_arrow';
+        playAudioBar.classList.remove("fa-pause")
+        playAudioBar.classList.add("fa-play")
     }
 
      // Toggle the play/pause state
     if (audioPlayer.paused) {
         audioPlayer.play();
-        playIcon.textContent = 'pause';
-        playAudioBar.textContent = 'pause';
+        // playIcon.textContent = 'pause';
+        // playAudioBar.textContent = 'pause';
+        playAudioBar.classList.remove("fa-play")
+        playAudioBar.classList.add("fa-pause")
+        playIcon.classList.remove("fa-play")
+        playIcon.classList.add("fa-pause")
         currentAudio = audioPlayer;
         currentPlayIcon = playIcon;
         currentIndex = index;
@@ -175,8 +198,12 @@ function handlePlayPause(audioPlayer, playIcon, index) {
         highlightCurrentMusicDiv(document.querySelectorAll('.music')[index]);
     } else {
         audioPlayer.pause();
-        playIcon.textContent = 'play_arrow';
-        playAudioBar.textContent = 'play_arrow';
+        // playIcon.textContent = 'play_arrow';
+        // playAudioBar.textContent = 'play_arrow';
+        playAudioBar.classList.remove("fa-pause")
+        playAudioBar.classList.add("fa-play")
+        playIcon.classList.remove("fa-pause")
+        playIcon.classList.add("fa-play")
         currentAudio = null;
         currentPlayIcon = null;
         currentIndex = -1
@@ -211,15 +238,23 @@ function playAudioAtCurrentIndex(list) {
     if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0; // Restart the previously playing song
-        if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
+        // if (currentPlayIcon) currentPlayIcon.textContent = 'play_arrow';
+        if (currentPlayIcon) {
+            currentPlayIcon.classList.remove("fa-pause");
+            currentPlayIcon.classList.add("fa-play");
+        }
         removeHighlightFromMusicDiv(document.querySelectorAll('.music')[currentIndex]);
     }
 
     // const { audioPlayer, playIcon } = audioList[currentIndex];
     const { audioPlayer, playIcon, artist, title, musicDiv } = list[currentIndex];
     audioPlayer.play();
-    playIcon.textContent = 'pause';
-    playAudioBar.textContent = 'pause';
+    // playIcon.textContent = 'pause';
+    // playAudioBar.textContent = 'pause';
+    playAudioBar.classList.remove("fa-play")
+    playAudioBar.classList.add("fa-pause")
+    playIcon.classList.remove("fa-play")
+    playIcon.classList.add("fa-pause")
     durationBar.textContent = formatTime(audioPlayer.duration);
     currentAudio = audioPlayer;
     currentPlayIcon = playIcon;

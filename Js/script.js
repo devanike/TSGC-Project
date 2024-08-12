@@ -4,7 +4,6 @@ const profilePicture = document.getElementById("profile-pic")
 const profileDropDown = document.getElementById("profile-dropdown")
 const navMenu = document.getElementById("menu")
 const navItems = document.querySelectorAll(".navitem")
-// const hiddenNav = document.getElementById("hidden-nav")
 const closeBtn = document.getElementById("close")
 const mobileSideNav = document.getElementById("navbar")
 const desktopSideNav = document.getElementById("desktop-nav")
@@ -14,7 +13,6 @@ const clearSearchBar = document.getElementById("mobile-clear")
 const mobileSearchBar = document.getElementById("mobile-search")
 const mobileSearchInput = document.getElementById("mobile-search-input")
 const thumbs = document.querySelectorAll(".thumbs")
-// const playPauseIcon = document.getElementById("play-icon")
 const playIcons = document.querySelectorAll('.image-overlay > span');
 
 
@@ -68,7 +66,7 @@ function DisplayDiv(div) {
 navItems.forEach(navItem => {   //change this to a function
     navItem.addEventListener('click', function() {
       // Remove active class from all items
-        navItems.forEach(i => i.classList.remove('active'));
+        navItems.forEach(i =>  i.classList.remove('active'));
 
       // Add active class to the clicked item
         this.classList.add('active');
@@ -80,10 +78,14 @@ navItems.forEach(navItem => {   //change this to a function
 thumbs.forEach(thumb => {   //change this to a function
     thumb.addEventListener('click', function() {
       // Remove active class from all items
-        thumbs.forEach(i => i.classList.remove('active'));
+        thumbs.forEach(i => {
+            i.classList.remove('active');
+            i.classList.remove("fa-solid")
+        }) 
 
       // Add active class to the clicked item
         this.classList.add('active');
+        this.classList.add("fa-solid")
     })
 })
 
