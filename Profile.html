@@ -10,7 +10,7 @@
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
     <link href="css/queries.css" rel="stylesheet">
-    <title>Add Meetings</title>
+    <title>My Profile</title>
 </head>
 <body>
     <div class="container">
@@ -74,41 +74,41 @@
         <nav class="navbar hide" id="navbar">
             <ul class="navlist grid">
                 <li class="navitem" >
-                    <a href="All Messages-Admin.html">
+                    <a href="index.html">
                         <i class="fa-solid fa-home fa-lg"></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="All Messages.html">
+                        <i class="fa-solid fa-message fa-lg"></i>
                         <p>All <br>Messages</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="Upload Messages-Admin.html">
-                        <i class="fa-solid fa-upload fa-lg"></i>
-                        <p>Upload <br>Messages</p>
+                    <a href="Ministers.html">
+                        <i class="fa-solid fa-person fa-lg"></i>
+                        <p>Ministers</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="Add Minister.html">
-                        <i class="fa-solid fa-user-plus fa-lg"></i>
-                        <p>Add <br>Ministers</p>
+                    <a href="Meetings.html">
+                        <i class="fa-solid fa-comment fa-lg"></i>
+                        <p>Meetings</p>
                     </a>
                 </li>
-                <li class="navitem active">
-                    <a href="Add Meetings.html">
-                        <i class="fa-solid fa-file-circle-plus fa-lg"></i>
-                        <p>Add <br>Meetings</p>
-                    </a>
-                </li>
-                <!-- <li class="navitem">
-                    <a href="#">
-                        <span class="material-symbols-outlined">library_music</span>
+                <li class="navitem">
+                    <a href="Worship.html">
+                        <i class="fa-solid fa-music fa-lg"></i>
                         <p>Worship</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="#">
-                        <span class="material-symbols-outlined">genres</span>
+                    <a href="Songs.html">
+                        <i class="fa-solid fa-guitar fa-lg"></i>
                         <p>Songs <br>Birthed By <br>TSGC</p>
                     </a>
-                </li> -->
+                </li>
             </ul>
         </nav>
 
@@ -116,44 +116,44 @@
         <nav class="desktop-nav hide" id="desktop-nav">
             <ul class="grid">
                 <li class="navitem" >
-                    <a href="All Messages-Admin.html" class="flex">
+                    <a href="index.html" class="flex">
                         <i class="fa-solid fa-home fa-lg"></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li class="navitem">
+                    <a href="All Messages.html" class="flex">
+                        <i class="fa-solid fa-message fa-lg"></i>
                         <p>All Messages</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="Upload Messages-Admin.html" class="flex">
-                        <i class="fa-solid fa-upload fa-lg"></i>
-                        <p>Upload Messages</p>
+                    <a href="Ministers.html" class="flex">
+                        <i class="fa-solid fa-person fa-lg"></i>
+                        <p>Ministers</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="Add Minister.html" class="flex">
-                        <i class="fa-solid fa-user-plus fa-lg"></i>
-                        <p>Add Ministers</p>
+                    <a href="Meetings.html" class="flex">
+                        <i class="fa-solid fa-comment fa-lg"></i>
+                        <p>Meetings</p>
                     </a>
                 </li>
-                <li class="navitem active">
-                    <a href="Add Meetings.html" class="flex">
-                        <i class="fa-solid fa-file-circle-plus fa-lg"></i>
-                        <p>Add Meetings</p>
-                    </a>
-                </li>
-                <!-- <li class="navitem">
-                    <a href="#" class="flex">
-                        <span class="material-symbols-outlined">library_music</span>
+                <li class="navitem">
+                    <a href="Worship.html" class="flex">
+                        <i class="fa-solid fa-music fa-lg"></i>
                         <p>Worship</p>
                     </a>
                 </li>
                 <li class="navitem">
-                    <a href="#" class="flex">
-                        <span class="material-symbols-outlined">genres</span>
+                    <a href="Songs.html" class="flex">
+                        <i class="fa-solid fa-guitar fa-lg"></i>
                         <p>Songs Birthed <br>By TSGC</p>
                     </a>
-                </li> -->
+                </li>
             </ul>
             
-            <!-- <section class="events-container">
+            <section class="events-container">
                 <h1>Upcoming Events</h1>
                 <div class="events">
                     <div class="event fade">
@@ -169,27 +169,108 @@
                         <img src="images/images.jpeg" alt="Upcoming Event">
                     </div>
                 </div>
-            </section> -->
+            </section>
         </nav>
 
-        <!-- AUDIO UPLOAD FORM -->
+        <!-- PROFILE FORM -->
         <div class="main-content">
             <div class="upload-container">
-                <h1>Add Meeting</h1>
+                <h1>My Profile</h1>
                 <form action="#">
-                    <label for="meeting-name">Meeting Name</label>
-                    <input type="text" id="meeting-name" name="meeting-name" placeholder="Enter meeting name" required>
+                    <div class="center">
+                        <img src="" alt="Image Preview" id="imagePreview">
+                        <label for="image-file" id="file-input">Image File</label>
+                        <input type="file" class="file" id="image-file" name="image-file" accept="image/*" required>
+                    </div>
 
-                    <label for="meeting-code">Meeting Code</label>
-                    <input type="text" id="meeting-code" name="meeting-code" placeholder="Enter meeting code" required>
-
-        
-                    <!-- category -->
-                    <input type="submit" value="Upload">
+                    <div class="formgroups">
+                        <div class="formgroup">
+                            <label for="pro-name">Name</label>
+                            <input type="text" id="pro-name" name="pro-name" placeholder="Enter your Name" required>
+                        </div>
+                        <!-- <div class="formgroup">
+                            <label for="name">Last Name</label>
+                            <input type="text" id="lastname" name="lastname" placeholder="Enter your Last name" required>
+                        </div> -->
+                        <div class="formgroup">
+                            <label for="pro-email">Email</label>
+                            <input type="email" id="pro-email" name="pro-email" placeholder="Enter your email" required>
+                        </div>
+                        <!-- <div class="formgroup">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div> -->
+                        <div class="formgroup">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="formgroup">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                        </div>
+                    </div>
+                    
+                    
+                    <input type="submit" value="Submit">
                 </form>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName('event');
+
+                // Hide all slides
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+
+                // Increment slideIndex and reset if it exceeds the number of slides
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+
+                // Display the current slide
+                slides[slideIndex - 1].style.display = "block";
+
+                // Call showSlides function recursively after 3 seconds (3000 milliseconds)
+                setTimeout(showSlides, 3000); // Change image every 3 seconds
+            }
+        })
+
+        // getting the filename
+        document.querySelectorAll('input[type="file"]').forEach(file => {
+            file.addEventListener('change', (event) => {
+                let files = event.target.files;
+                let fileName = files[0].name;
+                let fileInput = event.target.previousElementSibling; // Assuming the label is the previous element
+                fileInput.textContent = fileName;
+            });
+        });
+
+        document.getElementById('image-file').addEventListener('change', function(event) {
+            const imagePreview = document.getElementById('imagePreview');
+            const file = event.target.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block'; // Show the image
+                };
+                
+                reader.readAsDataURL(file); // Convert the file to a data URL
+            }
+        });
+    </script>
 
 
     <script src="JS/script.js"></script>

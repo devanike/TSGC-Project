@@ -13,8 +13,9 @@
     }
 
     /* LOGO AND HAMBURGER MENU */
-    .container .topbar .top-content .left-content span {
+    .container .topbar .top-content .left-content i {
         display: block;
+        font-size: 25px;
     }
 
     .container .topbar .top-content .left-content img {
@@ -45,9 +46,9 @@
         padding-right: 10px;
     }
 
-    .container .topbar .top-content .center-content span {
+    .container .topbar .top-content .center-content i {
         display: block;
-        font-size: 30px;
+        font-size: 25px;
         margin-top: 6px;
         margin-left: 0;
     }
@@ -113,13 +114,13 @@
         appearance: none;
     }
 
-    .container .mobile-search span {
+    .container .mobile-search i {
         color: var(--bgcolor);
-        font-size: 28px;
+        /* font-size: 30px; */
         margin-top: 5px;
     }
 
-    .container .mobile-search span.mobile-clear {
+    .container .mobile-search i.mobile-clear {
         display: none;
     }
 
@@ -170,13 +171,13 @@
         /* padding: 5px; */
     }
 
-    .audio-controls-bar .controls .control-right span {
+    /* .audio-controls-bar .controls .control-right span {
         font-size: 25px;
     }
 
     .audio-controls-bar .controls .control-center .bar-icons span {
         font-size: 25px;
-    }
+    } */
     
     span#play-pause-button {
         font-size: 30px;
@@ -304,7 +305,7 @@
         padding-right: 10px;
     }
 
-    .container .topbar .top-content .left-content span {
+    .container .topbar .top-content .left-content i {
         display: block;
     }
 
@@ -431,16 +432,16 @@
         margin-right: 25px;
     }
 
-    .container .topbar .top-content .right-content .profile-dropdown ul li a p,
+    /* .container .topbar .top-content .right-content .profile-dropdown ul li a p,
     .container .desktop-nav ul .navitem a p {
         font-size: 20px;
-    }
+    } */
 
-    .container .topbar .top-content .right-content .profile-dropdown ul li a span,
+    /* .container .topbar .top-content .right-content .profile-dropdown ul li a span,
     .container .topbar .top-content .center-content .search span ,
     .container .desktop-nav ul .navitem a span {
         font-size: 30px;
-    }
+    } */
 
     .desktop-nav.hide {
         display: block;
@@ -479,7 +480,7 @@
     }
 
     .container .topbar .top-content .center-content .search input {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .container .topbar .top-content .right-content p{
@@ -490,20 +491,20 @@
         width: 32px;
     }
 
-    .container .topbar .top-content .right-content .profile .profile-dropdown ul li a p,
+    /* .container .topbar .top-content .right-content .profile .profile-dropdown ul li a p,
     .container .topbar .top-content .center-content .search input {
-        font-size: 18px;
-    }
+        font-size: 10px;
+    } */
 
-    .container .topbar .top-content .right-content .profile .profile-dropdown ul li a span,
+    /* .container .topbar .top-content .right-content .profile .profile-dropdown ul li a span,
     .container .desktop-nav ul .navitem a span,
     .container .topbar .top-content .center-content .search span {
         font-size: 25px;
-    }
+    } */
 
-    .container .desktop-nav ul .navitem a p {
+    /* .container .desktop-nav ul .navitem a p {
         font-size: 15px;
-    }
+    } */
 
     /* All Messages */
     /* .container .main-content .all-messages .message .music {
@@ -546,8 +547,8 @@
         display: block;
     }
 
-    .container .desktop-nav ul li a p { 
-        font-size: 20px;
-    }
+    /* .container .desktop-nav ul li a p { 
+        font-size: 10px;
+    } */
 
 }

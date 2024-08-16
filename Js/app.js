@@ -3,7 +3,7 @@ document.querySelectorAll('input[type="file"]').forEach(file => {
     file.addEventListener('change', (event) => {
         let files = event.target.files;
         let fileName = files[0].name;
-        let fileInput = event.target.previousElementSibling; // Assuming the label is the next element
+        let fileInput = event.target.previousElementSibling; // Assuming the label is the previous element
         fileInput.textContent = fileName;
     });
 });

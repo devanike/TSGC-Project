@@ -35,25 +35,25 @@
                         <div class="profile-dropdown hide" id="profile-dropdown">
                             <ul class="grid">
                                 <li>
-                                    <a href="#" class="flex">
+                                    <a href="Profile.html" class="flex">
                                         <i class="fa-solid fa-user fa-lg"></i>
                                         <p>My Profile</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="flex">
+                                    <a href="Change_Password.html" class="flex">
                                         <i class="fa-solid fa-lg fa-key"></i>
                                         <p>Change Password</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="flex">
+                                    <a href="Subscribe.html" class="flex">
                                         <i class="fa-solid fa-lg fa-list"></i>
                                         <p>Subscription Plan</p>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="flex">
+                                    <a href="Login.html" class="flex">
                                         <i class="fa-solid fa-lg fa-sign-out"></i>
                                         <p>Sign Out</p>
                                     </a>
@@ -194,6 +194,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // getting the filename
+        document.querySelectorAll('input[type="file"]').forEach(file => {
+            file.addEventListener('change', (event) => {
+                let files = event.target.files;
+                let fileName = files[0].name;
+                let fileInput = event.target.previousElementSibling; // Assuming the label is the previous element
+                fileInput.textContent = fileName;
+            });
+        });
+    </script>
 
     <script src="JS/script.js"></script>
     <!-- <script src="Js/app.js"></script> -->

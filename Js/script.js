@@ -14,6 +14,8 @@ const mobileSearchBar = document.getElementById("mobile-search")
 const mobileSearchInput = document.getElementById("mobile-search-input")
 const thumbs = document.querySelectorAll(".thumbs")
 const playIcons = document.querySelectorAll('.image-overlay > span');
+const subscription = document.getElementById("subscription")
+// const closeSubIcon = document.getElementById("close-sub")
 
 
 function clearInputField(input, icon) {
@@ -169,7 +171,7 @@ document.querySelectorAll('.ministry').forEach(minister => {
         localStorage.setItem('minister', JSON.stringify({ ministerName, ministerImage }));
 
         // Redirect to the new page
-        window.location.href = 'Minister.html'; // Change this to your target page
+        window.location.href = 'Minister.html';
     });
 });
 

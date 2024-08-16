@@ -36,6 +36,30 @@ a {
     /* overflow-x: hidden; */
 }
 
+.upload-container .formgroups {
+    width: 100%;
+    display: grid;
+    /* justify-content: center; */
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+.upload-container .formgroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-container .center {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+
+.upload-container .center img {
+    display: none;
+    width: 200px;
+}
+
 label {
     /* margin-bottom: 5px; */
     font-weight: bold;
